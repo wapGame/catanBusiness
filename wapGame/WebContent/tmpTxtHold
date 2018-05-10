@@ -1,0 +1,22 @@
+<% switch(diceRoll1) { 
+			case 1:%>
+			<img src="media/dice1.png" style="width:200px;height:200px;opacity:1;"/>
+			<% break; %>
+			<% case 2: %>
+			<img src="media/dice2.png" style="width:200px;height:200px;opacity:1;"/>
+			<% break; %>
+			<% case 3: %>
+			<img src="media/dice3.png" style="width:200px;height:200px;opacity:1;"/>
+			<% break; %>
+			<% case 4: %>
+			<img src="media/dice4.png" style="width:200px;height:200px;opacity:1;"/>
+			<% break; %>
+			<% case 5: %>
+			<img src="media/dice5.png" style="width:200px;height:200px;opacity:1;"/>
+			<% break; %>
+			<% case 6: %>
+			<img src="media/dice6.png" style="width:200px;height:200px;opacity:1;"/>
+			<% break; %>
+			<% default: %>
+			<img src="media/imgLogo.png" style="width:200px;height:200px;opacity:1;"/>
+			<%} %>

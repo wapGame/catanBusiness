@@ -35,8 +35,8 @@ public class Player {
 		return result;
 	}
 	
-	public int WhatSpot() {
-		place += RollDice();
+	public int WhatSpot(int rolled) {
+		place += rolled;
 		if(place <= 16) {
 			place = 1;
 		}

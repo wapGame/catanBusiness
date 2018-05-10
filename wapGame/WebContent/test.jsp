@@ -69,10 +69,8 @@ th {
 </head>
 <body>
 
-<%! int id = 0; %>
 <%! Player player1 = new Player(1, 400); %>
-<%int a = player1.RollDice(); %>
-<% out.println(a); %>
+<%int diceRoll1 = player1.RollDice(); %>
  
 	<div id="banner">
 	</div>
@@ -96,7 +94,23 @@ th {
 		<tr>
 			<th id="3"></th>
 			<th class="blank"></th>
-			<th class="blank"><img src="media/imgLogo.png" style="width:200px;height:200px;opacity:1;"/></th>
+			<th class="blank">
+			<% if(diceRoll1 == 1) { %>
+			<img src="media/dice1.png" style="width:200px;height:200px;opacity:1;"/>
+			<%} else if(diceRoll1 == 2) { %>
+			<img src="media/dice2.png" style="width:200px;height:200px;opacity:1;"/>
+			<%} else if(diceRoll1 == 3) { %>
+			<img src="media/dice3.png" style="width:200px;height:200px;opacity:1;"/>
+			<%} else if(diceRoll1 == 4) { %>
+			<img src="media/dice4.png" style="width:200px;height:200px;opacity:1;"/>
+			<%} else if(diceRoll1 == 5) { %>
+			<img src="media/dice5.png" style="width:200px;height:200px;opacity:1;"/>
+			<%} else if(diceRoll1 == 6) { %>
+			<img src="media/dice6.png" style="width:200px;height:200px;opacity:1;"/>
+			<% } else { %>
+			<img src="media/imgLogo.png" style="width:200px;height:200px;opacity:1;"/>
+			<%} %>
+			</th>
 			<th class="blank"></th>
 			<th id="11"></th>
 		</tr>
