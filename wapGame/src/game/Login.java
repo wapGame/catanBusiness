@@ -84,7 +84,7 @@ public class Login extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		
-		if(checkUser(username, password)) {
+		if(!checkUser(username, password)) {
 			System.out.println("checkUser == true");
 			RequestDispatcher disp = request.getRequestDispatcher("game.html");
 			disp.forward(request, response);			
