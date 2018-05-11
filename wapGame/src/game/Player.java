@@ -36,9 +36,12 @@ public class Player {
 	}
 	
 	public int WhatSpot(int rolled) {
-		place += rolled;
-		if(place <= 16) {
-			place = 1;
+		for(int i = 1; i <= rolled; i++) {
+			place++;
+			
+			if(place > 16) {
+				place = 1;
+			}
 		}
 		return place;
 	}

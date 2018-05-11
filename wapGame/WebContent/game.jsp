@@ -70,7 +70,9 @@ th {
 <body>
 
 <%! Player player1 = new Player(1, 400); %>
-<%int diceRoll1 = player1.RollDice(); %>
+<% int diceRoll1 = player1.RollDice(); %>
+<% int position1 = player1.WhatSpot(diceRoll1);%>
+<% out.println(position1); %>
  
 	<div id="banner">
 	</div>
@@ -78,21 +80,53 @@ th {
 	<div id="main">
 	<table class="table">
 		<tr>
-			<th id="5">x</th>
-			<th id="6"></th>
-			<th id="7"></th>
-			<th id="8"></th>
-			<th id="9"></th>
+			<th>
+			<% if(position1 == 5) {%>
+			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<% }%>
+			</th>
+			<th>
+			<% if(position1 == 6) {%>
+			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<% }%>
+			</th>
+			<th>
+			<% if(position1 == 7) {%>
+			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<% }%>
+			</th>
+			<th>
+			<% if(position1 == 8) {%>
+			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<% }%>
+			</th>
+			<th>
+			<% if(position1 == 9) {%>
+			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<% }%>
+			</th>
 		</tr>
 		<tr>
-			<th id="4"></th>
+			<th>
+			<% if(position1 == 4) {%>
+			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<% }%>
+			</th>
 			<th class="blank"></th>
 			<th class="blank"></th>
 			<th class="blank"></th>
-			<th id="10"></th>
+			<th>
+			<% if(position1 == 10) {%>
+			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<% }%>
+			</th>
 		</tr>
 		<tr>
-			<th id="3"></th>
+			<th>
+			<% if(position1 == 3) {%>
+			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<% }%>
+			</th>
 			<th class="blank"></th>
 			<th class="blank">
 			<% if(diceRoll1 == 1) { %>
@@ -112,21 +146,53 @@ th {
 			<%} %>
 			</th>
 			<th class="blank"></th>
-			<th id="11"></th>
+			<th>
+			<% if(position1 == 11) {%>
+			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<% }%>
+			</th>
 		</tr>
 		<tr>
-			<th id="2"></th>
+			<th>
+			<% if(position1 == 2) {%>
+			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<% }%>
+			</th>
 			<th class="blank"></th>
 			<th class="blank"></th>
 			<th class="blank"></th>
-			<th id="12"></th>
+			<th>
+			<% if(position1 == 12) {%>
+			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<% }%>
+			</th>
 		</tr>
 		<tr>
-			<th id="1"></th>
-			<th id="16"></th>
-			<th id="15"></th>
-			<th id="14"></th>
-			<th id="13"></th>
+			<th>
+			<% if(position1 == 1) {%>
+			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<% }%>
+			</th>
+			<th>
+			<% if(position1 == 16) {%>
+			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<% }%>
+			</th>
+			<th>
+			<% if(position1 == 15) {%>
+			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<% }%>
+			</th>
+			<th>
+			<% if(position1 == 14) {%>
+			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<% }%>
+			</th>
+			<th>
+			<% if(position1 == 13) {%>
+			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<% }%>
+			</th>
 		</tr>
 	</table>
 	</div>
