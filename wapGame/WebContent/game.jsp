@@ -63,6 +63,25 @@ th {
 	background: none;
 	border: none;
 }
+	
+.pawn {
+	width:145px;
+	height:200px;
+	opacity:1;
+	display: block;
+}
+	
+	#pawnOrange {
+		content:url(media/pawn1.png);
+		margin-left: 0;
+		margin-right: auto;
+	}
+	
+	#pawnBlue {
+		content:url(media/pawn2.png);
+		margin-left: auto;
+    		margin-right: 0;
+	}
 
 </style>
 
@@ -82,34 +101,34 @@ th {
 		<tr>
 			<th>
 			<% if(position1 == 5) {%>
-			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			</th>
 			<th>
 			<% if(position1 == 6) {%>
-			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			</th>
 			<th>
 			<% if(position1 == 7) {%>
-			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			</th>
 			<th>
 			<% if(position1 == 8) {%>
-			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			</th>
 			<th>
 			<% if(position1 == 9) {%>
-			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			</th>
 		</tr>
 		<tr>
 			<th>
 			<% if(position1 == 4) {%>
-			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			</th>
 			<th class="blank"></th>
@@ -117,14 +136,14 @@ th {
 			<th class="blank"></th>
 			<th>
 			<% if(position1 == 10) {%>
-			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			</th>
 		</tr>
 		<tr>
 			<th>
 			<% if(position1 == 3) {%>
-			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			</th>
 			<th class="blank"></th>
@@ -148,14 +167,14 @@ th {
 			<th class="blank"></th>
 			<th>
 			<% if(position1 == 11) {%>
-			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			</th>
 		</tr>
 		<tr>
 			<th>
 			<% if(position1 == 2) {%>
-			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			</th>
 			<th class="blank"></th>
@@ -163,34 +182,34 @@ th {
 			<th class="blank"></th>
 			<th>
 			<% if(position1 == 12) {%>
-			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			</th>
 		</tr>
 		<tr>
 			<th>
 			<% if(position1 == 1) {%>
-			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			</th>
 			<th>
 			<% if(position1 == 16) {%>
-			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			</th>
 			<th>
 			<% if(position1 == 15) {%>
-			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			</th>
 			<th>
 			<% if(position1 == 14) {%>
-			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			</th>
 			<th>
 			<% if(position1 == 13) {%>
-			<img src="media/pawn1.png" style="width:145px;height:200px;opacity:1;"/>
+			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			</th>
 		</tr>
