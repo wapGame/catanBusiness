@@ -57,6 +57,7 @@ th {
    border: 1px solid black;
    width: 200px;
    height: 200px;
+   position: rlative;
 }
 
 .blank {
@@ -65,22 +66,20 @@ th {
 }
 	
 .pawn {
-	width:145px;
-	height:200px;
+	width:100px;
+	height:100px;
 	opacity:1;
 	display: block;
 }
 	
 	#pawnOrange {
 		content:url(media/pawn1.png);
-		margin-left: 0;
-		margin-right: auto;
+		margin-left: auto;
 	}
 	
 	#pawnBlue {
 		content:url(media/pawn2.png);
-		margin-left: auto;
-    		margin-right: 0;
+		margin-right: auto;
 	}
 
 </style>
@@ -92,6 +91,12 @@ th {
 <% int diceRoll1 = player1.RollDice(); %>
 <% int position1 = player1.WhatSpot(diceRoll1);%>
 <% out.println(position1); %>
+
+<%! Player player2 = new Player(2, 250); %>
+<% int diceRoll2 = player2.RollDice(); %>
+<% int position2 = player2.WhatSpot(diceRoll2); %>
+<% out.println(position2); %>
+
  
 	<div id="banner">
 	</div>
@@ -103,25 +108,40 @@ th {
 			<% if(position1 == 5) {%>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
+			<% if(position2 == 5) {%>
+			<img class="pawn" id="pawnBlue"/>
+			<% }%>
 			</th>
 			<th>
 			<% if(position1 == 6) {%>
 			<img class="pawn" id="pawnOrange"/>
+			<% }%>
+			<% if(position2 == 6) {%>
+			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
 			<th>
 			<% if(position1 == 7) {%>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
+			<% if(position2 == 7) {%>
+			<img class="pawn" id="pawnBlue"/>
+			<% }%>
 			</th>
 			<th>
 			<% if(position1 == 8) {%>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
+			<% if(position2 == 8) {%>
+			<img class="pawn" id="pawnBlue"/>
+			<% }%>
 			</th>
 			<th>
 			<% if(position1 == 9) {%>
 			<img class="pawn" id="pawnOrange"/>
+			<% }%>
+			<% if(position2 == 9) {%>
+			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
 		</tr>
@@ -129,6 +149,9 @@ th {
 			<th>
 			<% if(position1 == 4) {%>
 			<img class="pawn" id="pawnOrange"/>
+			<% }%>
+			<% if(position2 == 4) {%>
+			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
 			<th class="blank"></th>
@@ -138,12 +161,18 @@ th {
 			<% if(position1 == 10) {%>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
+			<% if(position2 == 10) {%>
+			<img class="pawn" id="pawnBlue"/>
+			<% }%>
 			</th>
 		</tr>
 		<tr>
 			<th>
 			<% if(position1 == 3) {%>
 			<img class="pawn" id="pawnOrange"/>
+			<% }%>
+			<% if(position2 == 3) {%>
+			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
 			<th class="blank"></th>
@@ -169,12 +198,18 @@ th {
 			<% if(position1 == 11) {%>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
+			<% if(position2 == 11) {%>
+			<img class="pawn" id="pawnBlue"/>
+			<% }%>
 			</th>
 		</tr>
 		<tr>
 			<th>
 			<% if(position1 == 2) {%>
 			<img class="pawn" id="pawnOrange"/>
+			<% }%>
+			<% if(position2 == 2) {%>
+			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
 			<th class="blank"></th>
@@ -184,6 +219,9 @@ th {
 			<% if(position1 == 12) {%>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
+			<% if(position2 == 12) {%>
+			<img class="pawn" id="pawnBlue"/>
+			<% }%>
 			</th>
 		</tr>
 		<tr>
@@ -191,25 +229,40 @@ th {
 			<% if(position1 == 1) {%>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
+			<% if(position2 == 1) {%>
+			<img class="pawn" id="pawnBlue"/>
+			<% }%>
 			</th>
 			<th>
 			<% if(position1 == 16) {%>
 			<img class="pawn" id="pawnOrange"/>
+			<% }%>
+			<% if(position2 == 16) {%>
+			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
 			<th>
 			<% if(position1 == 15) {%>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
+			<% if(position2 == 15) {%>
+			<img class="pawn" id="pawnBlue"/>
+			<% }%>
 			</th>
 			<th>
 			<% if(position1 == 14) {%>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
+			<% if(position2 == 14) {%>
+			<img class="pawn" id="pawnBlue"/>
+			<% }%>
 			</th>
 			<th>
 			<% if(position1 == 13) {%>
 			<img class="pawn" id="pawnOrange"/>
+			<% }%>
+			<% if(position2 == 13) {%>
+			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
 		</tr>
