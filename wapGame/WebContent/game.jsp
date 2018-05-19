@@ -136,12 +136,14 @@ th {
 			<% if(position1 == 5) {%>
 			<% if(field.checkField(player1, player2, card5)) {
 				//ifTureChangeColorToOrange
+				<img src="media/pawn1_bg.png"/>
 			}%>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			<% if(position2 == 5) {%>
 			<% if(field.checkField(player2, player1, card5)) {
 				//ifTureChangeColorToBlue
+				<img src="media/pawn2_bg.png"/>
 			}%>
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
