@@ -1,4 +1,6 @@
 <%@ page import="game.Player"%>
+<%@ page import="game.BoardField"%>
+<%@ page import="game.Card"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
@@ -92,10 +94,31 @@ th {
 <% int position1 = player1.WhatSpot(diceRoll1);%>
 <% out.println(position1); %>
 
-<%! Player player2 = new Player(2, 250); %>
+<%! Player player2 = new Player(2, 400); %>
 <% int diceRoll2 = player2.RollDice(); %>
 <% int position2 = player2.WhatSpot(diceRoll2); %>
 <% out.println(position2); %>
+
+
+<%! BoardField field = new BoardField(); %>
+
+<%! Card card1 = new Card("Card1", 50); %>
+<%! Card card2 = new Card("Card2", 60); %>
+<%! Card card3 = new Card("Card3", 70); %>
+<%! Card card4 = new Card("Card4", 80); %>
+<%! Card card5 = new Card("Card5", 90); %>
+<%! Card card6 = new Card("Card6", 100); %>
+<%! Card card7 = new Card("Card7", 110); %>
+<%! Card card8 = new Card("Card8", 120); %>
+<%! Card card9 = new Card("Card9", 130); %>
+<%! Card card10 = new Card("Card10", 140); %>
+<%! Card card11 = new Card("Card11", 150); %>
+<%! Card card12 = new Card("Card12", 160); %>
+<%! Card card13 = new Card("Card13", 170); %>
+<%! Card card14 = new Card("Card14", 180); %>
+<%! Card card15 = new Card("Card15", 190); %>
+<%! Card card16 = new Card("Card16", 200); %>
+
 
  
 	<div id="banner">
@@ -106,41 +129,52 @@ th {
 		<tr>
 			<th>
 			<% if(position1 == 5) {%>
+			<% field.checkField(player1, player2, card5); %>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			<% if(position2 == 5) {%>
+			<% field.checkField(player2, player1, card5); %>
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
 			<th>
 			<% if(position1 == 6) {%>
+			<% field.checkField(player1, player2, card6); %>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			<% if(position2 == 6) {%>
+			<% field.checkField(player2, player1, card6); %>
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
+			
 			<th>
 			<% if(position1 == 7) {%>
+			<% field.checkField(player1, player2, card7); %>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			<% if(position2 == 7) {%>
+			<% field.checkField(player2, player1, card7); %>
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
 			<th>
 			<% if(position1 == 8) {%>
+			<% field.checkField(player1, player2, card8); %>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			<% if(position2 == 8) {%>
+			<% field.checkField(player2, player1, card8); %>
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
 			<th>
 			<% if(position1 == 9) {%>
+			<% field.checkField(player1, player2, card9); %>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			<% if(position2 == 9) {%>
+			<% field.checkField(player2, player1, card9); %>
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
@@ -148,9 +182,11 @@ th {
 		<tr>
 			<th>
 			<% if(position1 == 4) {%>
+			<% field.checkField(player1, player2, card4); %>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			<% if(position2 == 4) {%>
+			<% field.checkField(player2, player1, card4); %>
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
@@ -159,9 +195,11 @@ th {
 			<th class="blank"></th>
 			<th>
 			<% if(position1 == 10) {%>
+			<% field.checkField(player1, player2, card10); %>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			<% if(position2 == 10) {%>
+			<% field.checkField(player2, player1, card10); %>
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
@@ -169,9 +207,11 @@ th {
 		<tr>
 			<th>
 			<% if(position1 == 3) {%>
+			<% field.checkField(player1, player2, card3); %>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			<% if(position2 == 3) {%>
+			<% field.checkField(player2, player1, card3); %>
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
@@ -196,9 +236,11 @@ th {
 			<th class="blank"></th>
 			<th>
 			<% if(position1 == 11) {%>
+			<% field.checkField(player1, player2, card11); %>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			<% if(position2 == 11) {%>
+			<% field.checkField(player2, player1, card11); %>
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
@@ -206,9 +248,11 @@ th {
 		<tr>
 			<th>
 			<% if(position1 == 2) {%>
+			<% field.checkField(player1, player2, card2); %>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			<% if(position2 == 2) {%>
+			<% field.checkField(player2, player1, card2); %>
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
@@ -217,9 +261,11 @@ th {
 			<th class="blank"></th>
 			<th>
 			<% if(position1 == 12) {%>
+			<% field.checkField(player1, player2, card12); %>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			<% if(position2 == 12) {%>
+			<% field.checkField(player2, player1, card12); %>
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
@@ -227,41 +273,51 @@ th {
 		<tr>
 			<th>
 			<% if(position1 == 1) {%>
+			<% field.checkField(player1, player2, card1); %>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			<% if(position2 == 1) {%>
+			<% field.checkField(player2, player1, card1); %>
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
 			<th>
 			<% if(position1 == 16) {%>
+			<% field.checkField(player1, player2, card16); %>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			<% if(position2 == 16) {%>
+			<% field.checkField(player2, player1, card16); %>
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
 			<th>
 			<% if(position1 == 15) {%>
+			<% field.checkField(player1, player2, card15); %>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			<% if(position2 == 15) {%>
+			<% field.checkField(player2, player1, card15); %>
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
 			<th>
 			<% if(position1 == 14) {%>
+			<% field.checkField(player1, player2, card14); %>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			<% if(position2 == 14) {%>
+			<% field.checkField(player2, player1, card14); %>
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
 			<th>
 			<% if(position1 == 13) {%>
+			<% field.checkField(player1, player2, card13); %>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			<% if(position2 == 13) {%>
+			<% field.checkField(player2, player1, card13); %>
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
