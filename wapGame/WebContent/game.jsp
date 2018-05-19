@@ -100,6 +100,7 @@ th {
 <% out.println(position2); %>
 
 
+
 <%! BoardField field = new BoardField(); %>
 
 <%! Card card1 = new Card("Card1", 50); %>
