@@ -130,11 +130,15 @@ th {
 		<tr>
 			<th>
 			<% if(position1 == 5) {%>
-			<% field.checkField(player1, player2, card5); %>
+			<% if(field.checkField(player1, player2, card5)) {
+				//ifTureChangeColorToOrange
+			}%>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			<% if(position2 == 5) {%>
-			<% field.checkField(player2, player1, card5); %>
+			<% if(field.checkField(player2, player1, card5)) {
+				//ifTureChangeColorToBlue
+			}%>
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
