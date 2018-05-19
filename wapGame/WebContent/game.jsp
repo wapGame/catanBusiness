@@ -83,6 +83,10 @@ th {
 		content:url(media/pawn2.png);
 		margin-right: auto;
 	}
+	
+	#coin {
+	background: url(media/coin.png) left center;
+	}
 
 </style>
 
@@ -262,7 +266,7 @@ th {
 			<% }%>
 			</th>
 			<th class="blank"></th>
-			<th class="blank"></th>
+			<th class="blank" id="coin"> <% // WSTAWIĆ COUNTER MONET%> </th>
 			<th class="blank"></th>
 			<th>
 			<% if(position1 == 12) {%>
