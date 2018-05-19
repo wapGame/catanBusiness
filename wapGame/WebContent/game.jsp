@@ -48,18 +48,18 @@ background-repeat: no-repeat;
 }
 
 .table {
+	background: url(media/table_bg.png) top center;
+        background-size:cover;
 	opacity: 0.9;
 	width:1000px;
 	height:1000px;
 }
 
 th {
-   background: url(media/block_bg.png) top center;
-   background-size:cover;
-   border: 1px solid black;
+   border: 2px solid black;
    width: 200px;
    height: 200px;
-   position: rlative;
+   position: relative;
 }
 
 .blank {
