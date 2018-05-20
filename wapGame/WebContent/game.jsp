@@ -72,20 +72,41 @@ th {
 	height:100px;
 	opacity:1;
 	display: block;
+	position:absolute;
+	z-index:1;
 }
 	
 	#pawnOrange {
 		content:url(media/pawn1.png);
 		margin-left: auto;
+		top: 0px;
+		left: 0px;
 	}
 	
 	#pawnBlue {
 		content:url(media/pawn2.png);
 		margin-right: auto;
+		top: 0px;
+		left: 95px;
 	}
 	
 	#coin {
 	background: url(media/coin.png) left center;
+	}
+	
+	.Orange {
+	background-color:rgba(255,127,80,0.7);
+	}
+
+	.Blue {
+	background-color:rgba(0,191,255,0.7);
+	}
+	
+	.background {
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:0;
 	}
 
 </style>
@@ -134,17 +155,15 @@ th {
 		<tr>
 			<th>
 			<% if(position1 == 5) {%>
-			<% if(field.checkField(player1, player2, card5)) {
-				//ifTureChangeColorToOrange
-				<img src="media/pawn1_bg.png"/>
-			}%>
+			<% if(field.checkField(player1, player2, card5)) { %>
+				<img src="media/pawn1_bg.png" class="background"/>
+			<%}%>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			<% if(position2 == 5) {%>
-			<% if(field.checkField(player2, player1, card5)) {
-				//ifTureChangeColorToBlue
-				<img src="media/pawn2_bg.png"/>
-			}%>
+			<% if(field.checkField(player2, player1, card5)) { %>
+				<img src="media/pawn2_bg.png" class="background"/>
+			<%}%>
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
