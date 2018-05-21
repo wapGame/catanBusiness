@@ -109,6 +109,13 @@ th {
 	z-index:0;
 	}
 
+	.vill {
+	background: url(media/card2.png) top center;
+	}
+	
+	.town {
+	background: url(media/card1.png) top center;
+	}
 </style>
 
 </head>
@@ -153,7 +160,7 @@ th {
 	<div id="main">
 	<table class="table">
 		<tr>
-			<th>
+			<th class="vill">
 			<% if(position1 == 5) {%>
 			<% if(field.checkField(player1, player2, card5)) { %>
 				<img src="media/pawn1_bg.png" class="background"/>
@@ -167,7 +174,7 @@ th {
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
-			<th>
+			<th class="vill">
 			<% if(position1 == 6) {%>
 			<% field.checkField(player1, player2, card6); %>
 			<img class="pawn" id="pawnOrange"/>
@@ -178,7 +185,7 @@ th {
 			<% }%>
 			</th>
 			
-			<th>
+			<th class="vill">
 			<% if(position1 == 7) {%>
 			<% field.checkField(player1, player2, card7); %>
 			<img class="pawn" id="pawnOrange"/>
@@ -188,7 +195,7 @@ th {
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
-			<th>
+			<th  class="vill">
 			<% if(position1 == 8) {%>
 			<% field.checkField(player1, player2, card8); %>
 			<img class="pawn" id="pawnOrange"/>
@@ -198,7 +205,7 @@ th {
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
-			<th>
+			<th class="town">
 			<% if(position1 == 9) {%>
 			<% field.checkField(player1, player2, card9); %>
 			<img class="pawn" id="pawnOrange"/>
@@ -210,7 +217,7 @@ th {
 			</th>
 		</tr>
 		<tr>
-			<th>
+			<th class="vill">
 			<% if(position1 == 4) {%>
 			<% field.checkField(player1, player2, card4); %>
 			<img class="pawn" id="pawnOrange"/>
@@ -223,7 +230,7 @@ th {
 			<th class="blank"></th>
 			<th class="blank"></th>
 			<th class="blank"></th>
-			<th>
+			<th class="town">
 			<% if(position1 == 10) {%>
 			<% field.checkField(player1, player2, card10); %>
 			<img class="pawn" id="pawnOrange"/>
@@ -235,7 +242,7 @@ th {
 			</th>
 		</tr>
 		<tr>
-			<th>
+			<th class="vill">
 			<% if(position1 == 3) {%>
 			<% field.checkField(player1, player2, card3); %>
 			<img class="pawn" id="pawnOrange"/>
@@ -264,7 +271,7 @@ th {
 			<%} %>
 			</th>
 			<th class="blank"></th>
-			<th>
+			<th class="town">
 			<% if(position1 == 11) {%>
 			<% field.checkField(player1, player2, card11); %>
 			<img class="pawn" id="pawnOrange"/>
@@ -276,7 +283,7 @@ th {
 			</th>
 		</tr>
 		<tr>
-			<th>
+			<th class="vill">
 			<% if(position1 == 2) {%>
 			<% field.checkField(player1, player2, card2); %>
 			<img class="pawn" id="pawnOrange"/>
@@ -289,7 +296,7 @@ th {
 			<th class="blank"></th>
 			<th class="blank" id="coin"> <% // WSTAWIĆ COUNTER MONET%> </th>
 			<th class="blank"></th>
-			<th>
+			<th class="town">
 			<% if(position1 == 12) {%>
 			<% field.checkField(player1, player2, card12); %>
 			<img class="pawn" id="pawnOrange"/>
@@ -301,7 +308,7 @@ th {
 			</th>
 		</tr>
 		<tr>
-			<th>
+			<th class="vill">
 			<% if(position1 == 1) {%>
 			<% field.checkField(player1, player2, card1); %>
 			<img class="pawn" id="pawnOrange"/>
@@ -311,7 +318,7 @@ th {
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
-			<th>
+			<th class="town">
 			<% if(position1 == 16) {%>
 			<% field.checkField(player1, player2, card16); %>
 			<img class="pawn" id="pawnOrange"/>
@@ -321,7 +328,7 @@ th {
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
-			<th>
+			<th class="town">
 			<% if(position1 == 15) {%>
 			<% field.checkField(player1, player2, card15); %>
 			<img class="pawn" id="pawnOrange"/>
@@ -331,7 +338,7 @@ th {
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
-			<th>
+			<th class="town">
 			<% if(position1 == 14) {%>
 			<% field.checkField(player1, player2, card14); %>
 			<img class="pawn" id="pawnOrange"/>
@@ -341,7 +348,7 @@ th {
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
 			</th>
-			<th>
+			<th class="town">
 			<% if(position1 == 13) {%>
 			<% field.checkField(player1, player2, card13); %>
 			<img class="pawn" id="pawnOrange"/>
