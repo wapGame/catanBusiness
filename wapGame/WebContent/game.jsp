@@ -121,12 +121,12 @@ th {
 </head>
 <body>
 
-<%! Player player1 = new Player(1, 400); %>
+<%! Player player1 = new Player(1, 1000); %>
 <% int diceRoll1 = player1.RollDice(); %>
 <% int position1 = player1.WhatSpot(diceRoll1);%>
 <% out.println(position1); %>
 
-<%! Player player2 = new Player(2, 400); %>
+<%! Player player2 = new Player(2, 1000); %>
 <% int diceRoll2 = player2.RollDice(); %>
 <% int position2 = player2.WhatSpot(diceRoll2); %>
 <% out.println(position2); %>
@@ -152,24 +152,26 @@ th {
 <%! Card card15 = new Card("Card15", 190); %>
 <%! Card card16 = new Card("Card16", 200); %>
 
+<%! String background = "card2.png"; %>
 
- 
 	<div id="banner">
 	</div>
 
 	<div id="main">
 	<table class="table">
 		<tr>
-			<th class="vill">
+			<th>
+			<img src="media/card2.png" class="background"/>
+			<img src="media/<%= background %>" class="background"/>
 			<% if(position1 == 5) {%>
 			<% if(field.checkField(player1, player2, card5)) { %>
-				<img src="media/pawn1_bg.png" class="background"/>
+			<% background = "pawn1_bg.png"; %>	
 			<%}%>
 			<img class="pawn" id="pawnOrange"/>
 			<% }%>
 			<% if(position2 == 5) {%>
 			<% if(field.checkField(player2, player1, card5)) { %>
-				<img src="media/pawn2_bg.png" class="background"/>
+			<% background = "pawn2_bg.png"; %>	
 			<%}%>
 			<img class="pawn" id="pawnBlue"/>
 			<% }%>
