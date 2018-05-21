@@ -92,6 +92,7 @@ th {
 	
 	#coin {
 	background: url(media/coin.png) left center;
+	background-repeat: no-repeat;
 	}
 	
 	.Orange {
@@ -111,10 +112,12 @@ th {
 
 	.vill {
 	background: url(media/card2.png) top center;
+	background-repeat: no-repeat;
 	}
 	
 	.town {
 	background: url(media/card1.png) top center;
+	background-repeat: no-repeat;
 	}
 </style>
 
