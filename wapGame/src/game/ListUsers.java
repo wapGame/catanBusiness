@@ -88,11 +88,11 @@ public class ListUsers extends HttpServlet {
 			while (result.next()) {
 				User user = new User();
 				String username = result.getString("username");
+				System.out.println(username);
 				user.setUsername(username);
 
 				String password = result.getString("password");
 				user.setPassword(password);
-
 				userList.add(user);
 			}
 		} catch (SQLException e) {
