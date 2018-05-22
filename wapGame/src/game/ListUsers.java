@@ -74,8 +74,9 @@ public class ListUsers extends HttpServlet {
 		}
 
 		String searchString = "SELECT * FROM users";
-		try {
+		try {			
 			result = statement.executeQuery(searchString);
+			System.out.println(result);
 		} catch (SQLException e) {
 			System.out.println("Error. Problem with executeUpdate: " + e);
 			return;
