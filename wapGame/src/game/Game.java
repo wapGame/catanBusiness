@@ -35,8 +35,9 @@ public class Game extends HttpServlet {
 
 		} else {
 			System.out.println("login == false");
-			RequestDispatcher disp = request.getRequestDispatcher("index.html");
-			disp.forward(request, response);
+			//RequestDispatcher disp = request.getRequestDispatcher("index.html");
+			//disp.forward(request, response);
+			response.sendRedirect("index.html");
 		}		
 			
 	}
