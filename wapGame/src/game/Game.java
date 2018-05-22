@@ -30,7 +30,7 @@ public class Game extends HttpServlet {
 		if (login == "true") {
 			
 			System.out.println("login == true");
-			RequestDispatcher disp = request.getRequestDispatcher("game.jsp");
+			RequestDispatcher disp = request.getRequestDispatcher("/WEB-INF/game.jsp");
 			disp.forward(request, response);	
 
 		} else {
