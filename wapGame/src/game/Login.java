@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/Login")
 public class Login extends HttpServlet {
@@ -84,10 +85,15 @@ public class Login extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		
-		if(!checkUser(username, password)) {
+		
+		if(checkUser(username, password)) {
+			HttpSession session = request.getSession();
+			session.setAttribute("login", "true");
+			
 			System.out.println("checkUser == true");
-			RequestDispatcher disp = request.getRequestDispatcher("game.html");
-			disp.forward(request, response);			
+			//RequestDispatcher disp = request.getRequestDispatcher("game.jsp");
+			//disp.forward(request, response);	
+			response.sendRedirect("Game");
 		} else {
 			System.out.println("checkUser == false");
 			RequestDispatcher disp = request.getRequestDispatcher("index.html");

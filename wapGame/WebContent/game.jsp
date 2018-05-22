@@ -175,9 +175,12 @@ th {
 
 	<div id="menu">
 		<div id="submenu">
+			<form action="Logout" method="post">
 			<button type="button">See Rankings</button>
 			<button type="button">How to Play</button>
-			<button type="button">Log Out</button>
+			<button type="submit" >Log Out</button>
+			</form>
+
 		</div>	
 	</div>
 
@@ -389,6 +392,7 @@ th {
 	</div>
 
 	<div class="footer" align="center"> </br> I don't even know. </div>
+	
 </body>
 
 </html>
