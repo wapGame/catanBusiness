@@ -121,6 +121,17 @@ th {
 	background: url(media/card1.png) top center;
 	background-repeat: no-repeat;
 	}
+	
+	#menu {
+	width:100%;
+	height:50px;
+	}
+
+	#submenu {
+	margin: auto;
+	width:48%;
+	}
+
 </style>
 
 </head>
@@ -160,6 +171,14 @@ th {
 <%! String background = "card2.png"; %>
 
 	<div id="banner">
+	</div>
+
+	<div id="menu">
+		<div id="submenu">
+			<button type="button">See Rankings</button>
+			<button type="button">How to Play</button>
+			<button type="button">Log Out</button>
+		</div>	
 	</div>
 
 	<div id="main">
@@ -235,7 +254,7 @@ th {
 			<% }%>
 			</th>
 			<th class="blank"></th>
-			<th class="blank"></th>
+			<th class="blank">> <button type="button">End Turn</button> </th>
 			<th class="blank"></th>
 			<th class="town">
 			<% if(position1 == 10) {%>
