@@ -93,6 +93,8 @@ th {
 	#coin {
 	background: url(media/coin.png) left center;
 	background-repeat: no-repeat;
+	text-align: right;
+	font-weight: bold;
 	}
 	
 	.Orange {
@@ -299,7 +301,7 @@ th {
 			<% }%>
 			</th>
 			<th class="blank"></th>
-			<th class="blank" id="coin"> <% // WSTAWIĆ COUNTER MONET%> </th>
+			<th class="blank" id="coin"> <% out.println("Wstawić licznik"); %> </th>
 			<th class="blank"></th>
 			<th class="town">
 			<% if(position1 == 12) {%>
