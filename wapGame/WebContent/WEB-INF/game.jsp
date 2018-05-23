@@ -152,6 +152,11 @@ th {
 	background: url(media/start.png) top center;
 	background-repeat: no-repeat;
 }
+	
+.direction {
+	background: url(media/direction.png) top center;
+	background-repeat: no-repeat;
+}
 
 
 #menu {
@@ -437,7 +442,7 @@ th {
  	}
  %>
 				</th>
-				<th class="blank"></th>
+				<th class="blank" class="direction"></th>
 				<th class="blank" id="coin">
 					<%
 						out.println(player1.GetMoney());
