@@ -87,21 +87,29 @@ public class Login extends HttpServlet {
 		
 		
 
-		if(username == "cb" || (checkUser(username, password) && username!="")) {
-
-
-			HttpSession session = request.getSession();
-			session.setAttribute("login", "true");
+		if(checkUser(username, password) && username!="") {
 			
+			HttpSession session = request.getSession();
+			session.setAttribute("login", "true");			
 			System.out.println("checkUser == true");
 			//RequestDispatcher disp = request.getRequestDispatcher("game.jsp");
-			//disp.forward(request, response);	
+			//disp.forward(request, response);				
 			response.sendRedirect("Game");
-		} else{
+			
+		} else if(username == "cb") {
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("login", "true");			
+			System.out.println("checkUser == true");
+			response.sendRedirect("Game");
+			
+		}else {
 			System.out.println("checkUser == false");
 			RequestDispatcher disp = request.getRequestDispatcher("index.html");
 			disp.forward(request, response);
+			
 		}
+		
 		
 
 	}
