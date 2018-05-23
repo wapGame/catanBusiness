@@ -8,11 +8,11 @@ public class Player {
 
 	private int minDice = 1;
 	private int maxDice = 6;
-	private int place = 1;
-
+	private int place = 0;
+	private int lastRollDice = 1;
 	private int playerID;
 	private int money;
-
+	private boolean AI = false;
 	private List<Card> cardList = new ArrayList<>();
 
 	public Player(int _playerID, int _money) {
@@ -32,7 +32,15 @@ public class Player {
 		}
 		return false;
 	}
-	
+
+	public void setAI(boolean AI) {
+		this.AI = AI;
+	}
+
+	public boolean isThisAI() {
+		return AI;
+	}
+
 	public boolean checkMoneyStatus(int amount) {
 		int tmp = (this.money - amount);
 
@@ -71,22 +79,27 @@ public class Player {
 		return this.money;
 	}
 
+	public int GetLastRollDice() {
+		return this.lastRollDice;
+	}
+
 	public int RollDice() {
 		Random roll = new Random();
 		int result = minDice + roll.nextInt(maxDice);
+		lastRollDice = result;
 		return result;
 	}
 
 	public int WhatSpot(int rolled) {
 		for (int i = 1; i <= rolled; i++) {
-			place++;
-
+			++place;
 			if (place > 16) {
 				place = 1;
 			}
 		}
 		return place;
 	}
+
 	public int GetPlace() {
 		return place;
 	}
