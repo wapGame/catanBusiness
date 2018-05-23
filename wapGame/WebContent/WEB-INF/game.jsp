@@ -138,8 +138,8 @@ th {
 <body>
 		
 <% Player player1 = (Player)session.getAttribute("player1"); %>
-<% int diceRoll1 = player1.RollDice(); %>
-<% int position1 = player1.WhatSpot(diceRoll1);%>
+<% int diceRoll1 = player2.RollDice(); %>
+<% int position1 = player1.GetPlace();%>
 <% out.println(position1); %>
 
 <%! Player player2 = new Player(2, 1000); %>
@@ -257,7 +257,13 @@ th {
 			<% }%>
 			</th>
 			<th class="blank"></th>
-			<th class="blank">> <button type="button">End Turn</button> </th>
+			<th class="blank">> 
+			
+						<form action="Game" method="post">
+			<button type="submit" name="endturn" >End Turn</button>
+						</form>
+			
+			 </th>
 			<th class="blank"></th>
 			<th class="town">
 			<% if(position1 == 10) {%>

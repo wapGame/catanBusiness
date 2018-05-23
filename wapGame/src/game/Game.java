@@ -20,7 +20,14 @@ public class Game extends HttpServlet {
 		super();
 	}
 
-
+	public void Rzut(HttpSession session) {
+		
+		Player player = (Player)session.getAttribute("player1");
+		player.WhatSpot(player.RollDice());		
+		
+		session.setAttribute("player1", player);	
+		
+	}
 	
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {		
@@ -46,6 +53,13 @@ public class Game extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
+		
+		if (request.getParameter("endturn") != null) {
+			
+			HttpSession session = request.getSession();
+            Rzut(session);
+            
+		}
 			doGet(request, response);
 	}
 

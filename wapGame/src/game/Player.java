@@ -87,4 +87,7 @@ public class Player {
 		}
 		return place;
 	}
+	public int GetPlace() {
+		return place;
+	}
 }
