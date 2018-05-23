@@ -104,7 +104,7 @@ th {
 	content: url(media/pawn2.png);
 	margin-right: auto;
 	top: 0px;
-	https: //online.mbank.pl/pl #Dalej left: 95px;
+	left: 95px;
 }
 
 #coin {
