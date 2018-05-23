@@ -123,7 +123,6 @@ th {
 }
 
 .background {
-	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: 0;
@@ -206,8 +205,7 @@ th {
 	<div id="main">
 		<table class="table">
 			<tr>
-				<th><img src="media/card2.png" class="background" /> <img
-					src="media/<%=background%>" class="background" /> <%
+				<th class="vill"><img src="media/<%=background%>" class="background" /> <%
  	if (position1 == 5) {
  %> <%
  	if (field.checkField(player1, player2, card[5])) {
