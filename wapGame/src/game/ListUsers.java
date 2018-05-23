@@ -90,11 +90,12 @@ public class ListUsers extends HttpServlet {
 				User user = new User();
 				String username = result.getString("username");
 				
-				System.out.println("nazwa usera");
+				System.out.println(username);
 				
 				user.setUsername(username);
 
 				String password = result.getString("password");
+				System.out.println(password);
 				user.setPassword(password);
 				userList.add(user);
 			}

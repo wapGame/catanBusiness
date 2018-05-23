@@ -97,7 +97,7 @@ public class Login extends HttpServlet {
 			//RequestDispatcher disp = request.getRequestDispatcher("game.jsp");
 			//disp.forward(request, response);	
 			response.sendRedirect("Game");
-		} else {
+		} else{
 			System.out.println("checkUser == false");
 			RequestDispatcher disp = request.getRequestDispatcher("index.html");
 			disp.forward(request, response);
