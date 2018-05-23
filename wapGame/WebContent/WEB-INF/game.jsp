@@ -466,20 +466,8 @@ th {
 				</th>
 			</tr>
 			<tr>
-				<th class="vill">
-					<%
-						if (position1 == 1) {
-					%> <%
- 	field.checkField(player1, player2, card[1]);
- %> <img class="pawn" id="pawnOrange" /> <%
- 	}
- %> <%
- 	if (position2 == 1) {
- %> <%
- 	field.checkField(player2, player1, card[1]);
- %> <img class="pawn" id="pawnBlue" /> <%
- 	}
- %>
+				<th class="start">
+					<% // Zaimplementować Start %>
 				</th>
 				<th class="town">
 					<%
