@@ -89,7 +89,6 @@ public class Login extends HttpServlet {
 
 		if(username == "cb" || (checkUser(username, password) && username!="")) {
 
-		if(username == "cb" || checkUser(username, password) && username!="") {
 
 			HttpSession session = request.getSession();
 			session.setAttribute("login", "true");
@@ -103,7 +102,7 @@ public class Login extends HttpServlet {
 			RequestDispatcher disp = request.getRequestDispatcher("index.html");
 			disp.forward(request, response);
 		}
-		}
+		
 
 	}
 
