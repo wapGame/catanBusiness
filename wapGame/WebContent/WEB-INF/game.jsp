@@ -132,11 +132,27 @@ th {
 	background: url(media/card2.png) top center;
 	background-repeat: no-repeat;
 }
+	
+.vill2 {
+	background: url(media/card3.png) top center;
+	background-repeat: no-repeat;
+}
 
 .town {
 	background: url(media/card1.png) top center;
 	background-repeat: no-repeat;
 }
+	
+.town2 {
+	background: url(media/card4.png) top center;
+	background-repeat: no-repeat;
+}
+	
+.start {
+	background: url(media/start.png) top center;
+	background-repeat: no-repeat;
+}
+
 
 #menu {
 	width: 100%;
