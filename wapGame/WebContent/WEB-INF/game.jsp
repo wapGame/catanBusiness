@@ -137,7 +137,7 @@ th {
 </head>
 <body>
 
-<%! Player player1 = new Player(1, 1000); %>
+<% Player player1 = (Player)request.getAttribute("player1"); %>
 <% int diceRoll1 = player1.RollDice(); %>
 <% int position1 = player1.WhatSpot(diceRoll1);%>
 <% out.println(position1); %>
