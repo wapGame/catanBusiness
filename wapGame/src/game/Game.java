@@ -14,23 +14,20 @@ import javax.servlet.http.HttpSession;
 public class Game extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
-	public static Player player1 = new Player(1, 1000); 
-	
 	
 	
 	public Game() {
 		super();
 	}
 
+
 	
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {		
 		
-		request.setAttribute("player1", player1);
-		
-		
 		HttpSession session = request.getSession();
-		Object login = session.getAttribute("login");
+		
+		String login = (String)session.getAttribute("login");
 			
 		if (login == "true") {
 			

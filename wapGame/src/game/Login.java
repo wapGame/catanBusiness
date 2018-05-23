@@ -20,6 +20,7 @@ public class Login extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 	
+	
 	public Login() {
 		super();
 	}
@@ -90,10 +91,21 @@ public class Login extends HttpServlet {
 		if(checkUser(username, password) && username!="") {
 			
 			HttpSession session = request.getSession();
+			
+	
+			Player player1 = new Player(1, 1000); 
+			session.setAttribute("player1", player1);			
+			
+			
 			session.setAttribute("login", "true");			
 			System.out.println("checkUser == true");
 			//RequestDispatcher disp = request.getRequestDispatcher("game.jsp");
-			//disp.forward(request, response);				
+			//disp.forward(request, response);	
+			
+			
+			
+			
+			
 			response.sendRedirect("Game");
 			
 		} else if(username == "cb") {

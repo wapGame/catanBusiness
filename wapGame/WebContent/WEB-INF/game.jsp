@@ -136,8 +136,8 @@ th {
 
 </head>
 <body>
-
-<% Player player1 = (Player)request.getAttribute("player1"); %>
+		
+<% Player player1 = (Player)session.getAttribute("player1"); %>
 <% int diceRoll1 = player1.RollDice(); %>
 <% int position1 = player1.WhatSpot(diceRoll1);%>
 <% out.println(position1); %>
