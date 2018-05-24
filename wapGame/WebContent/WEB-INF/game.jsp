@@ -276,9 +276,11 @@ th {
 					<form action="Game" method="post">
 						<%
 							if (!(position1 == 1 && position2 == 1)) {
+								if (player1.rolled == true) {
 						%>
-						<button type="submit" name="endturn">End Turn</button>
+						<button type="submit" name="endturn">End Turn</button>						
 						<%
+								}
 							if (player1.rolled == false) {
 						%>
 						<button type="submit" name="roll">Roll</button>
