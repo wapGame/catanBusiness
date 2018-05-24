@@ -134,7 +134,7 @@ th {
 	background: url(media/card2.png) top center;
 	background-repeat: no-repeat;
 }
-	
+
 .vill2 {
 	background: url(media/card3.png) top center;
 	background-repeat: no-repeat;
@@ -144,22 +144,21 @@ th {
 	background: url(media/card1.png) top center;
 	background-repeat: no-repeat;
 }
-	
+
 .town2 {
 	background: url(media/card4.png) top center;
 	background-repeat: no-repeat;
 }
-	
+
 .start {
 	background: url(media/start.png) top center;
 	background-repeat: no-repeat;
 }
-	
+
 .direction {
 	background: url(media/direction.png) top center;
 	background-repeat: no-repeat;
 }
-
 
 #menu {
 	width: 100%;
@@ -177,25 +176,12 @@ th {
 
 	<%
 		Player player1 = (Player) session.getAttribute("player1");
-	%>
-	<%
 		int diceRoll1 = player1.GetLastRollDice();
-	%>
-	<%
 		int position1 = player1.GetPlace();
-	%>
-	<%
 		out.println(position1);
-	%>
 
-	<%
 		Player player2 = (Player) session.getAttribute("player2");
-	%>
-
-	<%
 		int position2 = player2.GetPlace();
-	%>
-	<%
 		out.println(position2);
 	%>
 
@@ -206,10 +192,9 @@ th {
 
 	<%
 		Card[] card = (Card[]) session.getAttribute("card");
+		field.checkField(player1, player2, card[position1]);
+		field.checkField(player2, player1, card[position2]);
 	%>
-
-
-	<%!String background = "card2.png";%>
 
 
 	<div id="banner"></div>
@@ -228,105 +213,63 @@ th {
 	<div id="main">
 		<table class="table">
 			<tr>
-				<th class="vill"><img src="media/<%=background%>" class="background" /> <%
+				<th class="vill"><img src="media/<%=card[5].getBackgroung()%>"
+					class="background" /> <%
  	if (position1 == 5) {
- %> <%
- 	if (field.checkField(player1, player2, card[5])) {
- %> <%
- 	background = "pawn1_bg.png";
- %> <%
- 	}
  %> <img class="pawn" id="pawnOrange" /> <%
  	}
- %> <%
  	if (position2 == 5) {
- %> <%
- 	if (field.checkField(player2, player1, card[5])) {
- %> <%
- 	background = "pawn2_bg.png";
- %> <%
- 	}
  %> <img class="pawn" id="pawnBlue" /> <%
  	}
  %></th>
-				<th class="vill">
-					<%
-						if (position1 == 6) {
-					%> <%
- 	field.checkField(player1, player2, card[6]);
+				<th class="vill"><img src="media/<%=card[6].getBackgroung()%>"
+					class="background" /> <%
+ 	if (position1 == 6) {
  %> <img class="pawn" id="pawnOrange" /> <%
  	}
- %> <%
  	if (position2 == 6) {
- %> <%
- 	field.checkField(player2, player1, card[6]);
  %> <img class="pawn" id="pawnBlue" /> <%
  	}
- %>
-				</th>
+ %></th>
 
-				<th class="vill">
-					<%
-						if (position1 == 7) {
-					%> <%
- 	field.checkField(player1, player2, card[7]);
+				<th class="vill"><img src="media/<%=card[7].getBackgroung()%>"
+					class="background" /> <%
+ 	if (position1 == 7) {
  %> <img class="pawn" id="pawnOrange" /> <%
  	}
- %> <%
  	if (position2 == 7) {
- %> <%
- 	field.checkField(player2, player1, card[7]);
  %> <img class="pawn" id="pawnBlue" /> <%
  	}
- %>
-				</th>
-				<th class="vill">
-					<%
-						if (position1 == 8) {
-					%> <%
- 	field.checkField(player1, player2, card[8]);
+ %></th>
+				<th class="vill"><img src="media/<%=card[8].getBackgroung()%>"
+					class="background" /> <%
+ 	if (position1 == 8) {
  %> <img class="pawn" id="pawnOrange" /> <%
  	}
- %> <%
  	if (position2 == 8) {
- %> <%
- 	field.checkField(player2, player1, card[8]);
  %> <img class="pawn" id="pawnBlue" /> <%
  	}
- %>
-				</th>
-				<th class="town">
-					<%
-						if (position1 == 9) {
-					%> <%
- 	field.checkField(player1, player2, card[9]);
+ %></th>
+				<th class="town"><img src="media/<%=card[9].getBackgroung()%>"
+					class="background" /> <%
+ 	if (position1 == 9) {
  %> <img class="pawn" id="pawnOrange" /> <%
  	}
- %> <%
  	if (position2 == 9) {
- %> <%
- 	field.checkField(player2, player1, card[9]);
  %> <img class="pawn" id="pawnBlue" /> <%
  	}
- %>
-				</th>
+ %></th>
 			</tr>
 			<tr>
-				<th class="vill">
-					<%
-						if (position1 == 4) {
-					%> <%
- 	field.checkField(player1, player2, card[4]);
+				<th class="vill"><img src="media/<%=card[4].getBackgroung()%>"
+					class="background" /> <%
+ 	if (position1 == 4) {
  %> <img class="pawn" id="pawnOrange" /> <%
  	}
- %> <%
  	if (position2 == 4) {
- %> <%
- 	field.checkField(player2, player1, card[4]);
  %> <img class="pawn" id="pawnBlue" /> <%
  	}
- %>
-				</th>
+ %></th>
 				<th class="blank"></th>
 				<th class="blank">
 
@@ -352,38 +295,26 @@ th {
 
 				</th>
 				<th class="blank"></th>
-				<th class="town">
-					<%
-						if (position1 == 10) {
-					%> <%
- 	field.checkField(player1, player2, card[10]);
+				<th class="town"><img src="media/<%=card[10].getBackgroung()%>"
+					class="background" /> <%
+ 	if (position1 == 10) {
  %> <img class="pawn" id="pawnOrange" /> <%
  	}
- %> <%
  	if (position2 == 10) {
- %> <%
- 	field.checkField(player2, player1, card[10]);
  %> <img class="pawn" id="pawnBlue" /> <%
  	}
- %>
-				</th>
+ %></th>
 			</tr>
 			<tr>
-				<th class="vill">
-					<%
-						if (position1 == 3) {
-					%> <%
- 	field.checkField(player1, player2, card[3]);
+				<th class="vill"><img src="media/<%=card[3].getBackgroung()%>"
+					class="background" /> <%
+ 	if (position1 == 3) {
  %> <img class="pawn" id="pawnOrange" /> <%
  	}
- %> <%
  	if (position2 == 3) {
- %> <%
- 	field.checkField(player2, player1, card[3]);
  %> <img class="pawn" id="pawnBlue" /> <%
  	}
- %>
-				</th>
+ %></th>
 				<th class="blank"></th>
 				<th class="blank">
 					<%
@@ -412,38 +343,26 @@ th {
  %>
 				</th>
 				<th class="blank"></th>
-				<th class="town">
-					<%
-						if (position1 == 11) {
-					%> <%
- 	field.checkField(player1, player2, card[11]);
+				<th class="town"><img src="media/<%=card[11].getBackgroung()%>"
+					class="background" /> <%
+ 	if (position1 == 11) {
  %> <img class="pawn" id="pawnOrange" /> <%
  	}
- %> <%
  	if (position2 == 11) {
- %> <%
- 	field.checkField(player2, player1, card[11]);
  %> <img class="pawn" id="pawnBlue" /> <%
  	}
- %>
-				</th>
+ %></th>
 			</tr>
 			<tr>
-				<th class="vill">
-					<%
-						if (position1 == 2) {
-					%> <%
- 	field.checkField(player1, player2, card[2]);
+				<th class="vill"><img src="media/<%=card[2].getBackgroung()%>"
+					class="background" /> <%
+ 	if (position1 == 2) {
  %> <img class="pawn" id="pawnOrange" /> <%
  	}
- %> <%
  	if (position2 == 2) {
- %> <%
- 	field.checkField(player2, player1, card[2]);
  %> <img class="pawn" id="pawnBlue" /> <%
  	}
- %>
-				</th>
+ %></th>
 				<th class="blank" class="direction"></th>
 				<th class="blank" id="coin">
 					<%
@@ -451,21 +370,15 @@ th {
 					%>
 				</th>
 				<th class="blank"></th>
-				<th class="town">
-					<%
-						if (position1 == 12) {
-					%> <%
- 	field.checkField(player1, player2, card[12]);
+				<th class="town"><img src="media/<%=card[12].getBackgroung()%>"
+					class="background" /> <%
+ 	if (position1 == 12) {
  %> <img class="pawn" id="pawnOrange" /> <%
  	}
- %> <%
  	if (position2 == 12) {
- %> <%
- 	field.checkField(player2, player1, card[12]);
  %> <img class="pawn" id="pawnBlue" /> <%
  	}
- %>
-				</th>
+ %></th>
 			</tr>
 			<tr>
 				<th class="start">
@@ -475,80 +388,54 @@ th {
  	
  %> <img class="pawn" id="pawnOrange" /> <%
  	}
- %> <%
  	if (position2 == 1) {
+ %> <img class="pawn" id="pawnBlue" /> <%
+ 	}
+ %>
+				</th>
+				<th class="town"><img src="media/<%=card[16].getBackgroung()%>"
+					class="background" /> <%
+ 	if (position1 == 16) {
+ %> <img class="pawn" id="pawnOrange" /> <%
+ 	}
+
+ 	if (position2 == 16) {
+ %> <img class="pawn" id="pawnBlue" /> <%
+ 	}
+ %></th>
+				<th class="town"><img src="media/<%=card[15].getBackgroung()%>"
+					class="background" /> <%
+ 	if (position1 == 15) {
  %> <%
  	
- %> <img class="pawn" id="pawnBlue" /> <%
- 	}
- %>
-				</th>
-				<th class="town">
-					<%
-						if (position1 == 16) {
-					%> <%
- 	field.checkField(player1, player2, card[16]);
  %> <img class="pawn" id="pawnOrange" /> <%
  	}
- %> <%
- 	if (position2 == 16) {
- %> <%
- 	field.checkField(player2, player1, card[16]);
- %> <img class="pawn" id="pawnBlue" /> <%
- 	}
- %>
-				</th>
-				<th class="town">
-					<%
-						if (position1 == 15) {
-					%> <%
- 	field.checkField(player1, player2, card[15]);
- %> <img class="pawn" id="pawnOrange" /> <%
- 	}
- %> <%
+
  	if (position2 == 15) {
- %> <%
- 	field.checkField(player2, player1, card[15]);
  %> <img class="pawn" id="pawnBlue" /> <%
  	}
- %>
-				</th>
-				<th class="town">
-					<%
-						if (position1 == 14) {
-					%> <%
- 	field.checkField(player1, player2, card[14]);
+ %></th>
+				<th class="town"><img src="media/<%=card[14].getBackgroung()%>"
+					class="background" /> <%
+ 	if (position1 == 14) {
+ %> <%
+ 	
  %> <img class="pawn" id="pawnOrange" /> <%
  	}
- %> <%
+
  	if (position2 == 14) {
- %> <%
- 	field.checkField(player2, player1, card[14]);
  %> <img class="pawn" id="pawnBlue" /> <%
  	}
- %>
-				</th>
-				<th class="town">
-					<%
-						if (position1 == 13) {
-					%> <%
- 	field.checkField(player1, player2, card[13]);
+ %></th>
+				<th class="town"><img src="media/<%=card[13].getBackgroung()%>"
+					class="background" /> <%
+ 	if (position1 == 13) {
  %> <img class="pawn" id="pawnOrange" /> <%
  	}
- %> <%
  	if (position2 == 13) {
- %> <%
- 	field.checkField(player2, player1, card[13]);
  %> <img class="pawn" id="pawnBlue" /> <%
  	}
- %> <%
- 	if (!card[position2].isBuyed() && player2.GetMoney() >= card[position2].getCost()) {
- %> <%
- 	card[position2].setToBuyed();
- %> <%
- 	}
- %>
-				</th>
+ %></th>
 			</tr>
 		</table>
 	</div>

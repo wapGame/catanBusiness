@@ -5,6 +5,7 @@ public class Card {
 	private String name;
 	private int cost;
 	public boolean isBuyed = false;
+	private int boughtBy = 0;
 
 	public Card(String _name, int _cost) {
 		name = _name;
@@ -23,8 +24,22 @@ public class Card {
 		return this.isBuyed;
 	}
 
-	public void setToBuyed() {
+	public void setToBuyed(int boughtBy) {
+		this.boughtBy = boughtBy;
 		this.isBuyed = true;
 	}
 
+	public String getBackgroung() {
+		if (boughtBy == 1) {
+			return "pawn1_bg.png";
+		} else if (boughtBy == 2) {
+			return "pawn2_bg.png";
+		} else {
+			return "default_bg.png";
+		}
+	}
+
+	public int boughtBy() {
+		return boughtBy;
+	}
 }

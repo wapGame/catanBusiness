@@ -21,16 +21,28 @@ public class Game extends HttpServlet {
 
 	public void Rzut(HttpSession session) {
 
+		Card[] card = (Card[]) session.getAttribute("card");
+		
 		Player player1 = (Player) session.getAttribute("player1");
 		player1.WhatSpot(player1.RollDice());
 
 		Player player2 = (Player) session.getAttribute("player2");
 		player2.WhatSpot(player2.RollDice());
-		player2.setAI(true);
 
+		
+		if(!card[player2.GetPlace()].isBuyed && player2.checkMoneyStatus(card[player2.GetPlace()].getCost())) {
+			player2.substractMoney(card[player2.GetPlace()].getCost());
+			player2.addToList(card[player2.GetPlace()]);
+			card[player2.GetPlace()].setToBuyed(2);
+			System.out.println("Player2 - buy " + card[player2.GetPlace()].getName());
+		}		
+		
+		session.setAttribute("card", card);
 		session.setAttribute("player1", player1);
 		session.setAttribute("player2", player2);
 	}
+	
+
 
 	public void Buy(HttpSession session) {
 
@@ -40,7 +52,7 @@ public class Game extends HttpServlet {
 		player1.substractMoney(card[player1.GetPlace()].getCost());
 		player1.addToList(card[player1.GetPlace()]);
 
-		card[player1.GetPlace()].setToBuyed();
+		card[player1.GetPlace()].setToBuyed(1);
 
 		System.out.println("Player1 - buy " + card[player1.GetPlace()].getName());
 

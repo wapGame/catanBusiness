@@ -30,13 +30,6 @@ public class BoardField {
 						+ player1.GetID() + " pay");
 				return false;
 			}
-		} else {
-			if (player1.isThisAI() && player1.checkMoneyStatus(card.getCost())) {
-				player1.substractMoney(card.getCost());
-				player1.addToList(card);
-				System.out.println("Player2 - buy " + card.getName());
-				return true;
-			}
 		}
 		System.out.println("Player: " + player1.GetID() + " Money: " + player1.GetMoney());
 		System.out.println();

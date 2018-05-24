@@ -95,7 +95,9 @@ public class Login extends HttpServlet {
 			session.setAttribute("player1", player1);
 			Player player2 = new Player(2, 1000);
 			session.setAttribute("player2", player2);
-
+			player2.setAI(true);
+			
+			
 			Card[] card = new Card[17];
 			card[0] = new Card("Card0", 0);
 			card[1] = new Card("Card1", 0);
