@@ -8,7 +8,7 @@ public class Player {
 
 	private int minDice = 1;
 	private int maxDice = 6;
-	private int place = 0;
+	private int place = 1;
 	private int lastRollDice = 1;
 	private int playerID;
 	private int money;

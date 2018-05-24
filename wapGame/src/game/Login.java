@@ -98,7 +98,7 @@ public class Login extends HttpServlet {
 
 			Card[] card = new Card[17];
 			card[0] = new Card("Card0", 0);
-			card[1] = new Card("Card1", 50);
+			card[1] = new Card("Card1", 0);
 			card[2] = new Card("Card2", 60);
 			card[3] = new Card("Card3", 70);
 			card[4] = new Card("Card4", 80);

@@ -330,7 +330,7 @@ th {
 
 					<form action="Game" method="post">
 						<%
-							if (!(position1 == 0)) {
+							if (!(position1 == 1 && position2 == 1)) {
 						%>
 						<button type="submit" name="endturn">End Turn</button>
 						<%
@@ -467,7 +467,19 @@ th {
 			</tr>
 			<tr>
 				<th class="start">
-					<% // Zaimplementować Start %>
+					<%
+						if (position1 == 1) {
+					%> <%
+ 	
+ %> <img class="pawn" id="pawnOrange" /> <%
+ 	}
+ %> <%
+ 	if (position2 == 1) {
+ %> <%
+ 	
+ %> <img class="pawn" id="pawnBlue" /> <%
+ 	}
+ %>
 				</th>
 				<th class="town">
 					<%
