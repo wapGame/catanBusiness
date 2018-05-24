@@ -14,7 +14,9 @@ public class Player {
 	private int money;
 	private boolean AI = false;
 	private List<Card> cardList = new ArrayList<>();
-
+	public boolean rolled = false;
+	
+	
 	public Player(int _playerID, int _money) {
 		this.playerID = _playerID;
 		this.money = _money;

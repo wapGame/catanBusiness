@@ -279,14 +279,18 @@ th {
 						%>
 						<button type="submit" name="endturn">End Turn</button>
 						<%
-							if (!card[position1].isBuyed() && player1.GetMoney() >= card[position1].getCost()) {
+							if (player1.rolled == false) {
+						%>
+						<button type="submit" name="roll">Roll</button>
+						<%
+							} else if (!card[position1].isBuyed() && player1.GetMoney() >= card[position1].getCost()) {
 						%>
 						<button type="submit" name="buy">Buy</button>
 						<%
 							}
 							} else {
 						%>
-						<button type="submit" name="endturn">START</button>
+						<button type="submit" name="roll">ROLL</button>
 						<%
 							}
 						%>

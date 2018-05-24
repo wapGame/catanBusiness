@@ -20,15 +20,23 @@ public class Game extends HttpServlet {
 	}
 
 	public void Rzut(HttpSession session) {
-
-		Card[] card = (Card[]) session.getAttribute("card");
 		
 		Player player1 = (Player) session.getAttribute("player1");
+		
 		player1.WhatSpot(player1.RollDice());
+		
+		player1.rolled = true;
+		
+		session.setAttribute("player1", player1);
+		
 
+	}
+	
+	public void EndTurn(HttpSession session) {
+		Card[] card = (Card[]) session.getAttribute("card");
+		Player player1 = (Player) session.getAttribute("player1");
 		Player player2 = (Player) session.getAttribute("player2");
 		player2.WhatSpot(player2.RollDice());
-
 		
 		if(!card[player2.GetPlace()].isBuyed && player2.checkMoneyStatus(card[player2.GetPlace()].getCost())) {
 			player2.substractMoney(card[player2.GetPlace()].getCost());
@@ -36,11 +44,13 @@ public class Game extends HttpServlet {
 			card[player2.GetPlace()].setToBuyed(2);
 			System.out.println("Player2 - buy " + card[player2.GetPlace()].getName());
 		}		
-		
+		player1.rolled = false;
 		session.setAttribute("card", card);
 		session.setAttribute("player1", player1);
 		session.setAttribute("player2", player2);
 	}
+	
+	
 	
 
 
@@ -87,9 +97,11 @@ public class Game extends HttpServlet {
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		if (request.getParameter("endturn") != null) {
-			Rzut(session);
+			EndTurn(session);
 		} else if (request.getParameter("buy") != null) {
 			Buy(session);
+		}else if (request.getParameter("roll") != null) {
+			Rzut(session);
 		}
 
 		doGet(request, response);
