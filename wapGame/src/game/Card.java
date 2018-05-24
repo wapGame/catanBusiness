@@ -31,9 +31,9 @@ public class Card {
 
 	public String getBackgroung() {
 		if (boughtBy == 1) {
-			return "pawn1_bg.png";
+			return "pawn_bg1.png";
 		} else if (boughtBy == 2) {
-			return "pawn2_bg.png";
+			return "pawn_bg2.png";
 		} else {
 			return "default_bg.png";
 		}
