@@ -77,6 +77,9 @@ th {
 	width: 200px;
 	height: 200px;
 	position: relative;
+	color: gold;
+	top-margin: 150px;
+	text-align: center;
 }
 
 .blank {
@@ -169,6 +172,21 @@ th {
 	margin: auto;
 	width: 48%;
 }
+	
+	.console {
+	background-color:white;
+	border: 2px solid black;
+	column-span: 2;
+	opacity: 1;
+	width: 400px;
+	height: 200px;
+	}
+	
+	.dice {
+	width: 200px;
+	height: 200px;
+	opacity: 1;
+	}
 </style>
 
 </head>
@@ -322,31 +340,10 @@ th {
  	}
  %></th>
 				<th class="blank"></th>
-				<th class="blank">
+				<th class="blank" id="coin">
 					<%
-						if (diceRoll1 == 1) {
-					%> <img src="media/dice1.png"
-					style="width: 200px; height: 200px; opacity: 1;" /> <%
- 	} else if (diceRoll1 == 2) {
- %> <img src="media/dice2.png"
-					style="width: 200px; height: 200px; opacity: 1;" /> <%
- 	} else if (diceRoll1 == 3) {
- %> <img src="media/dice3.png"
-					style="width: 200px; height: 200px; opacity: 1;" /> <%
- 	} else if (diceRoll1 == 4) {
- %> <img src="media/dice4.png"
-					style="width: 200px; height: 200px; opacity: 1;" /> <%
- 	} else if (diceRoll1 == 5) {
- %> <img src="media/dice5.png"
-					style="width: 200px; height: 200px; opacity: 1;" /> <%
- 	} else if (diceRoll1 == 6) {
- %> <img src="media/dice6.png"
-					style="width: 200px; height: 200px; opacity: 1;" /> <%
- 	} else {
- %> <img src="media/imgLogo.png"
-					style="width: 200px; height: 200px; opacity: 1;" /> <%
- 	}
- %>
+						out.println(player1.GetMoney());
+					%>
 				</th>
 				<th class="blank"></th>
 				<th class="town"><img src="media/<%=card[11].getBackgroung()%>"
@@ -369,13 +366,28 @@ th {
  %> <img class="pawn" id="pawnBlue" /> <%
  	}
  %></th>
-				<th class="blank" class="direction"></th>
-				<th class="blank" id="coin">
-					<%
-						out.println(player1.GetMoney());
-					%>
+				<th class="blank" class="console">
+				<% // Zrobić konsole, madafaka %>
 				</th>
-				<th class="blank"></th>
+				<th class="blank">
+				<%
+						if (diceRoll1 == 1) {
+					%> <img src="media/dice1.png" class="dice" /> <%
+ 	} else if (diceRoll1 == 2) {
+ %> <img src="media/dice2.png" class="dice" /> <%
+ 	} else if (diceRoll1 == 3) {
+ %> <img src="media/dice3.png" class="dice" /> <%
+ 	} else if (diceRoll1 == 4) {
+ %> <img src="media/dice4.png" class="dice" /> <%
+ 	} else if (diceRoll1 == 5) {
+ %> <img src="media/dice5.png" class="dice" /> <%
+ 	} else if (diceRoll1 == 6) {
+ %> <img src="media/dice6.png" class="dice" /> <%
+ 	} else {
+ %> <img src="media/imgLogo.png" class="dice" /> <%
+ 	}
+ %>
+				</th>
 				<th class="town"><img src="media/<%=card[12].getBackgroung()%>"
 					class="background" /> <%
  	if (position1 == 12) {
