@@ -176,7 +176,6 @@ th {
 	.console {
 	background-color:white;
 	border: 2px solid black;
-	column-span: 2;
 	opacity: 1;
 	width: 400px;
 	height: 200px;
@@ -366,7 +365,7 @@ th {
  %> <img class="pawn" id="pawnBlue" /> <%
  	}
  %></th>
-				<th class="blank" class="console">
+				<th class="blank" colspan="2" class="console">
 				<% // Zrobić konsole, madafaka %>
 				</th>
 				<th class="blank">
