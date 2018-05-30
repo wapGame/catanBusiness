@@ -214,7 +214,7 @@ th {
 	%>
 
 
-	<div id="banner"></div>
+	<a href="/Game"><div id="banner"></div></a>
 
 	<div id="menu">
 		<div id="submenu">
