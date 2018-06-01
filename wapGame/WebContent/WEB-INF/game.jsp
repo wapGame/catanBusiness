@@ -49,11 +49,9 @@ body {
 	opacity: 0.9;
 	background: #6c6f70;
 	background-image: linear-gradient(to bottom, #6c6f70, #424242);
-	border-radius: 28px;
 	text-shadow: 1px 1px 3px #666666;
 	box-shadow: 5px 5px 10px #666666;
 	color: #ffffff;
-	padding: 10px 20px 10px 20px;
 	text-decoration: bold;
 }
 
@@ -219,9 +217,9 @@ th {
 	<div id="menu">
 		<div id="submenu">
 			<form action="Logout" method="post">
-				<button type="button">See Rankings</button>
-				<button type="button">How to Play</button>
-				<button type="submit">Log Out</button>
+				<button class="btn" type="button">See Rankings</button>
+				<button class="btn" type="button">How to Play</button>
+				<button class="btn" type="submit">Log Out</button>
 			</form>
 
 		</div>
@@ -295,21 +293,21 @@ th {
 							if (!(position1 == 1 && position2 == 1)) {
 								if (player1.rolled == true) {
 						%>
-						<button type="submit" name="endturn">End Turn</button>						
+						<button type="submit" class="btn" name="endturn">End Turn</button>						
 						<%
 								}
 							if (player1.rolled == false) {
 						%>
-						<button type="submit" name="roll">Roll</button>
+						<button type="submit" class="btn" name="roll">Roll</button>
 						<%
 							} else if (!card[position1].isBuyed() && player1.GetMoney() >= card[position1].getCost()) {
 						%>
-						<button type="submit" name="buy">Buy</button>
+						<button type="submit" class="btn" name="buy">Buy</button>
 						<%
 							}
 							} else {
 						%>
-						<button type="submit" name="roll">ROLL</button>
+						<button type="submit" class="btn" name="roll">ROLL</button>
 						<%
 							}
 						%>
