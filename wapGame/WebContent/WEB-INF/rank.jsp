@@ -203,36 +203,19 @@ th {
 		<%
 			ArrayList<User> rankList = (ArrayList<User>) request.getAttribute("rankList");
 			if (rankList == null || rankList.isEmpty()) {
-				%><tr>
-				<td>
-					
-						Pusto
-					
-				</td>
-				<td>
-					
-						Pusto
-					
-				</td>
-			</tr>
-			<%
-			} 
-			else {
-				for (User user : rankList) {
 		%><tr>
-			<td>
-				<%
-					user.getUsername();
-				%>
-			</td>
-			<td>
-				<%
-					user.getRank();
-				%>
-			</td>
+			<td>Pusto</td>
+			<td>Pusto</td>
 		</tr>
 		<%
-				}
+			} else {
+				for (User user : rankList) {
+		%><tr>
+			<td><%=user.getUsername()%></td>
+			<td><%=user.getRank()%></td>
+		</tr>
+		<%
+			}
 			}
 		%>
 	</table>
