@@ -30,6 +30,10 @@ public class BoardField {
 						+ player1.GetID() + " pay");
 				return false;
 			}
+			else {
+				player1.substractMoney(payment);
+				return true;
+			}
 		}
 		System.out.println("Player: " + player1.GetID() + " Money: " + player1.GetMoney());
 		System.out.println();

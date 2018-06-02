@@ -96,6 +96,7 @@ public class Player {
 		for (int i = 1; i <= rolled; i++) {
 			++place;
 			if (place > 16) {
+			    money = money + 200;
 				place = 1;
 			}
 		}

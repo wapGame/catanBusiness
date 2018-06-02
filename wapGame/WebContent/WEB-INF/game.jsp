@@ -170,20 +170,20 @@ th {
 	margin: auto;
 	width: 48%;
 }
-	
-	.console {
-	background-color:white;
+
+.console {
+	background-color: white;
 	border: 2px solid black;
 	opacity: 1;
 	width: 400px;
 	height: 200px;
-	}
-	
-	.dice {
+}
+
+.dice {
 	width: 200px;
 	height: 200px;
 	opacity: 1;
-	}
+}
 </style>
 
 </head>
@@ -207,8 +207,6 @@ th {
 
 	<%
 		Card[] card = (Card[]) session.getAttribute("card");
-		field.checkField(player1, player2, card[position1]);
-		field.checkField(player2, player1, card[position2]);
 	%>
 
 
@@ -287,16 +285,33 @@ th {
  %></th>
 				<th class="blank"></th>
 				<th class="blank">
-
+					<%
+						if (field.checkField(player1, player2, card[position1])) {
+						%>
+						
+						Gracz 1 nie zbankrutował - koniec gry.
+						
+						<%}
+						else if(field.checkField(player2, player1, card[position2])){	
+						%>
+						
+					    Gracz 2 nie zbankrutował - koniec gry.
+						
+						
+						<%}	
+					
+					
+						else {							
+					%>
 					<form action="Game" method="post">
 						<%
 							if (!(position1 == 1 && position2 == 1)) {
-								if (player1.rolled == true) {
+									if (player1.rolled == true) {
 						%>
-						<button type="submit" class="btn" name="endturn">End Turn</button>						
+						<button type="submit" class="btn" name="endturn">End Turn</button>
 						<%
-								}
-							if (player1.rolled == false) {
+							}
+									if (player1.rolled == false) {
 						%>
 						<button type="submit" class="btn" name="roll">Roll</button>
 						<%
@@ -305,15 +320,16 @@ th {
 						<button type="submit" class="btn" name="buy">Buy</button>
 						<%
 							}
-							} else {
+								} else {
 						%>
 						<button type="submit" class="btn" name="roll">ROLL</button>
 						<%
 							}
 						%>
 
-					</form>
-
+					</form> <%
+ 	}
+ %>
 				</th>
 				<th class="blank"></th>
 				<th class="town"><img src="media/<%=card[10].getBackgroung()%>"
@@ -364,10 +380,12 @@ th {
  	}
  %></th>
 				<th class="blank" colspan="2" class="console">
-				<% // Zrobić konsole, madafaka %>
+					<%
+						// Zrobić konsole, madafaka
+					%>
 				</th>
 				<th class="blank">
-				<%
+					<%
 						if (diceRoll1 == 1) {
 					%> <img src="media/dice1.png" class="dice" /> <%
  	} else if (diceRoll1 == 2) {
