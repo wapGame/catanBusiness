@@ -34,8 +34,8 @@ public class BoardField {
 				DatabaseController dbc = new DatabaseController();
 				player1.substractMoney(payment);
 				player1.setBankrupt();				
-				dbc.setRankingList(player1.getUsername(),true);
-				dbc.setRankingList(player2.getUsername(),false);
+				dbc.setRankingList(player1.getUsername(),false);
+				dbc.setRankingList(player2.getUsername(),true);
 				return true;
 			}
 		}
