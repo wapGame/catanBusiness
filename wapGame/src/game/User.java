@@ -7,6 +7,7 @@ public class User implements Serializable {
 	static final long serialVersionUID = 12345L;
 	private String username;
 	private String password;
+	private int rank;
 
 	public User() {
 		// TODO Auto-generated constructor stub
@@ -14,6 +15,13 @@ public class User implements Serializable {
 
 	public String getUsername() {
 		return username;
+	}
+	
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+	public int getRank() {
+		return rank;
 	}
 
 	public void setUsername(String username) {

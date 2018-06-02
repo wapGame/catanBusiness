@@ -1,6 +1,7 @@
 <%@ page import="game.Player"%>
 <%@ page import="game.BoardField"%>
 <%@ page import="game.Card"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
