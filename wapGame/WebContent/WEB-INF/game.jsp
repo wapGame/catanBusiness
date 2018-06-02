@@ -163,8 +163,7 @@ th {
 
 #menu {
 	width: 100%;
-	height: 50px;
-    margin: auto;
+	height: 200px;
 }
 
 #submenu {
@@ -212,16 +211,7 @@ th {
 
 
 
-	<div id="menu">
-		<div id="submenu">
-			<form action="Logout" method="post">
-				<button class="btn" type="button">See Rankings</button>
-				<button class="btn" type="button">How to Play</button>
-				<button class="btn" type="submit">Log Out</button>
-			</form>
 
-		</div>
-	</div>
 
 	<div id="main">
 		<table class="table">
@@ -289,13 +279,13 @@ th {
 						if (player1.bankrupt) {
 						%>
 						
-						Gracz 1 zbankrutował - koniec gry.
+						<b>Zbankrutowano - koniec gry. Przegrana !!</b> 
 						
 						<%}
 						else if(player2.bankrupt){	
 						%>
 						
-					    Gracz 2 zbankrutował - koniec gry.
+					    <b>Gracz 2 zbankrutował - koniec gry. Wygrana !!</b>
 												
 						<%}						
 					
@@ -470,6 +460,20 @@ th {
 			</tr>
 		</table>
 	</div>
+	
+	
+		<div id="menu">
+		<div id="submenu">
+			<form action="Logout" method="post">
+				<button class="btn" type="button">See Rankings</button>
+				<button class="btn" type="button">How to Play</button>
+				<button class="btn" type="submit">Log Out</button>
+			</form>
+
+		</div>
+	</div>
+	
+	
 	<a href="/Game"><div id="banner"></div></a>
 
 	<div class="footer" align="center">
