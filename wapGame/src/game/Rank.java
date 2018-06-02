@@ -73,7 +73,7 @@ public class Rank extends HttpServlet {
 			return;
 		}
 
-		String searchString = "SELECT * FROM rank";
+		String searchString = "SELECT * FROM rank ORDER BY `rank` DESC";
 		try {			
 			result = statement.executeQuery(searchString);
 			System.out.println(result);

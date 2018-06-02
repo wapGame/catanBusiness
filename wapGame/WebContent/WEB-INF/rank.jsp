@@ -203,6 +203,7 @@ th {
 		<%
 			ArrayList<User> rankList = (ArrayList<User>) session.getAttribute("rankList");
 			for (User user : rankList) {
+				
 		%><tr>
 			<td>
 				<%
