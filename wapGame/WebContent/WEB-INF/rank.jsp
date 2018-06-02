@@ -201,7 +201,7 @@ th {
 		</tr>
 
 		<%
-			ArrayList<User> rankList = (ArrayList<User>) session.getAttribute("rankList");
+			ArrayList<User> rankList = (ArrayList<User>) request.getAttribute("rankList");
 			if (rankList == null || rankList.isEmpty()) {
 				%><tr>
 				<td>

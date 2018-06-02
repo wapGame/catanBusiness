@@ -93,11 +93,7 @@ public class AddUser extends HttpServlet {
 		}
 		
 		RequestDispatcher disp = request.getRequestDispatcher("/WEB-INF/addingOk.jsp");
-		disp.forward(request, response);
-
-		
-		
-		
+		disp.forward(request, response);	
 
 	}
 

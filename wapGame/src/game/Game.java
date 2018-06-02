@@ -70,6 +70,13 @@ public class Game extends HttpServlet {
 		session.setAttribute("player1", player1);
 
 	}
+	
+	
+	
+	
+	
+	
+	
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -92,6 +99,7 @@ public class Game extends HttpServlet {
 		}
 
 	}
+	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

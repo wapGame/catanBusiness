@@ -92,10 +92,13 @@ public class Login extends HttpServlet {
 			HttpSession session = request.getSession();
 
 			Player player1 = new Player(1, 500);
+			player1.setUsername(username);
 			session.setAttribute("player1", player1);
+			
 			Player player2 = new Player(2, 500);
-			session.setAttribute("player2", player2);
 			player2.setAI(true);
+			player2.setUsername("AI");
+			session.setAttribute("player2", player2);
 			
 			
 			Card[] card = new Card[17];
@@ -120,6 +123,8 @@ public class Login extends HttpServlet {
 			session.setAttribute("card", card);
 
 			session.setAttribute("login", "true");
+			
+			
 			System.out.println("checkUser == true");
 
 			response.sendRedirect("Game");

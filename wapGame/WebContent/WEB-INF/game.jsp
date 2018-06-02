@@ -286,7 +286,7 @@ th {
 						else if(player2.bankrupt){	
 						%>
 						
-					    <b>Gracz 2 zbankrutował - koniec gry. Wygrana !!</b>
+					    <b>Gracz 2 zbankrutował - koniec gry. Wygrana dla usera <% player1.getUsername();%> !!</b>
 												
 						<%}						
 					

@@ -10,6 +10,7 @@ public class Player {
 	private int maxDice = 6;
 	private int place = 1;
 	private int lastRollDice = 1;
+	private String username;
 	private int playerID;
 	private int money;
 	private boolean AI = false;
@@ -21,7 +22,15 @@ public class Player {
 		this.playerID = _playerID;
 		this.money = _money;
 	}
+	
+	public void setUsername(String user) {		
+		username = user;		
+	}
 
+	public String getUsername() {
+		return username;
+	}
+	
 	public void addToList(Card card) {
 		cardList.add(card);
 	}
