@@ -164,6 +164,7 @@ th {
 #menu {
 	width: 100%;
 	height: 50px;
+    margin: auto;
 }
 
 #submenu {
@@ -193,11 +194,9 @@ th {
 		Player player1 = (Player) session.getAttribute("player1");
 		int diceRoll1 = player1.GetLastRollDice();
 		int position1 = player1.GetPlace();
-		out.println(position1);
 
 		Player player2 = (Player) session.getAttribute("player2");
 		int position2 = player2.GetPlace();
-		out.println(position2);
 	%>
 
 
@@ -212,7 +211,6 @@ th {
 	%>
 
 
-	<a href="/Game"><div id="banner"></div></a>
 
 	<div id="menu">
 		<div id="submenu">
@@ -472,6 +470,7 @@ th {
 			</tr>
 		</table>
 	</div>
+	<a href="/Game"><div id="banner"></div></a>
 
 	<div class="footer" align="center">
 		</br> I don't even know.

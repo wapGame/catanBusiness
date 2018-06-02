@@ -91,9 +91,9 @@ public class Login extends HttpServlet {
 
 			HttpSession session = request.getSession();
 
-			Player player1 = new Player(1, 1000);
+			Player player1 = new Player(1, 500);
 			session.setAttribute("player1", player1);
-			Player player2 = new Player(2, 1000);
+			Player player2 = new Player(2, 500);
 			session.setAttribute("player2", player2);
 			player2.setAI(true);
 			
