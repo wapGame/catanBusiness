@@ -207,6 +207,8 @@ th {
 
 	<%
 		Card[] card = (Card[]) session.getAttribute("card");
+		field.checkField(player1, player2, card[position1]);
+		field.checkField(player2, player1, card[position2]);
 	%>
 
 
@@ -286,20 +288,18 @@ th {
 				<th class="blank"></th>
 				<th class="blank">
 					<%
-						if (field.checkField(player1, player2, card[position1])) {
+						if (player1.bankrupt) {
 						%>
 						
-						Gracz 1 nie zbankrutował - koniec gry.
+						Gracz 1 zbankrutował - koniec gry.
 						
 						<%}
-						else if(field.checkField(player2, player1, card[position2])){	
+						else if(player2.bankrupt){	
 						%>
 						
-					    Gracz 2 nie zbankrutował - koniec gry.
-						
-						
-						<%}	
-					
+					    Gracz 2 zbankrutował - koniec gry.
+												
+						<%}						
 					
 						else {							
 					%>

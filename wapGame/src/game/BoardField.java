@@ -32,6 +32,7 @@ public class BoardField {
 			}
 			else {
 				player1.substractMoney(payment);
+				player1.setBankrupt();
 				return true;
 			}
 		}

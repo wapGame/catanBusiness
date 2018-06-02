@@ -15,7 +15,7 @@ public class Player {
 	private boolean AI = false;
 	private List<Card> cardList = new ArrayList<>();
 	public boolean rolled = false;
-	
+	public boolean bankrupt = false;
 	
 	public Player(int _playerID, int _money) {
 		this.playerID = _playerID;
@@ -35,6 +35,10 @@ public class Player {
 		return false;
 	}
 
+	public void setBankrupt() {
+		bankrupt = true;
+	}
+	
 	public void setAI(boolean AI) {
 		this.AI = AI;
 	}
@@ -53,6 +57,8 @@ public class Player {
 		}
 	}
 
+	
+	
 	public void substractMoney(int amount) {
 		if (checkMoneyStatus(amount)) {
 			this.money -= amount;
@@ -96,7 +102,7 @@ public class Player {
 		for (int i = 1; i <= rolled; i++) {
 			++place;
 			if (place > 16) {
-			    money = money + 200;
+			    money = money + 100;
 				place = 1;
 			}
 		}
