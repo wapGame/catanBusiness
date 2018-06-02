@@ -90,7 +90,7 @@ public class Rank extends HttpServlet {
 				String username = result.getString("username");
 				user.setUsername(username);
 				
-				int value = result.getInt("value");
+				int value = result.getInt("rank");
 				user.setRank(value);
 				
 				rankList.add(user);

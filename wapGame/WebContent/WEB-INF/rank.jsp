@@ -2,7 +2,7 @@
 <%@ page import="game.BoardField"%>
 <%@ page import="game.Card"%>
 <%@ page import="game.User"%>
-<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.ArrayList"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -191,21 +191,35 @@ th {
 
 </head>
 <body>
-	
+
 	<a href="/Game"><div id="banner"></div></a>
 
-	
-	<%
-	ArrayList<User> rankList = (ArrayList<User>) session.getAttribute("rankList");
-	
-	
-	rankList.forEach(
-			(a)->System.out.println(a.getUsername() + " " + a.getRank())
-			);
-	
-	
-	%>
-    
+	<table border=1>
+		<tr>
+			<th>Username</th>
+			<th>Rank</th>
+		</tr>
+
+		<%
+			ArrayList<User> rankList = (ArrayList<User>) session.getAttribute("rankList");
+			for (User user : rankList) {
+		%><tr>
+			<td>
+				<%
+					user.getUsername();
+				%>
+			</td>
+			<td>
+				<%
+					user.getRank();
+				%>
+			</td>
+		</tr>
+		<%
+			}
+		%>
+	</table>
+
 
 
 
