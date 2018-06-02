@@ -466,9 +466,11 @@ th {
 		<div id="menu">
 		<div id="submenu">
 			<form action="Logout" method="post">
-				<button class="btn" type="button">See Rankings</button>
 				<button class="btn" type="button">How to Play</button>
 				<button class="btn" type="submit">Log Out</button>
+			</form>
+			<form action="Rank" method="post">
+				<button class="btn" type="submit">See Rankings</button>
 			</form>
 
 		</div>
