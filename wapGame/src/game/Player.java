@@ -1,14 +1,9 @@
 package game;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import javax.servlet.RequestDispatcher;
 
 public class Player {
 
@@ -23,6 +18,7 @@ public class Player {
 	private List<Card> cardList = new ArrayList<>();
 	public boolean rolled = false;
 	public boolean bankrupt = false;
+	public boolean saved = false;
 	
 	public Player(int _playerID, int _money) {
 		this.playerID = _playerID;

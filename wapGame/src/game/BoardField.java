@@ -29,13 +29,18 @@ public class BoardField {
 				System.out.println("Player" + player2.GetID() + " have " + card.getName() + " - Player"
 						+ player1.GetID() + " pay");
 				return false;
-			}
-			else {
+			} else {
 				DatabaseController dbc = new DatabaseController();
 				player1.substractMoney(payment);
-				player1.setBankrupt();				
-				dbc.setRankingList(player1.getUsername(),false);
-				dbc.setRankingList(player2.getUsername(),true);
+				player1.setBankrupt();
+				if (player1.saved == false) {
+					dbc.setRankingList(player1.getUsername(), false);
+					player1.saved = true;
+				}
+				if (player1.saved == false) {
+					dbc.setRankingList(player2.getUsername(), true);
+					player2.saved = true;
+				}
 				return true;
 			}
 		}
