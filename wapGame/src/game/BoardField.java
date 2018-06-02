@@ -31,8 +31,11 @@ public class BoardField {
 				return false;
 			}
 			else {
+				DatabaseController dbc = new DatabaseController();
 				player1.substractMoney(payment);
 				player1.setBankrupt();				
+				dbc.setRankingList(player1.getUsername(),true);
+				dbc.setRankingList(player2.getUsername(),false);
 				return true;
 			}
 		}
