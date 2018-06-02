@@ -87,12 +87,12 @@ public class Rank extends HttpServlet {
 		try {
 			while (result.next()) {
 				User user = new User();
-				String username = result.getString("username");
-				user.setUsername(username);
 				
-				int value = result.getInt("rank");
-				user.setRank(value);
+				user.setUsername(result.getString("username"));
 				
+				user.setRank(result.getInt("rank"));
+				
+				System.out.println(result.getString("username"));
 				rankList.add(user);
 			}
 		} catch (SQLException e) {

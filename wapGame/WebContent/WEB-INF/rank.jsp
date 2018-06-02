@@ -202,8 +202,23 @@ th {
 
 		<%
 			ArrayList<User> rankList = (ArrayList<User>) session.getAttribute("rankList");
-			for (User user : rankList) {
-				
+			if (rankList == null || rankList.isEmpty()) {
+				%><tr>
+				<td>
+					
+						Pusto
+					
+				</td>
+				<td>
+					
+						Pusto
+					
+				</td>
+			</tr>
+			<%
+			} 
+			else {
+				for (User user : rankList) {
 		%><tr>
 			<td>
 				<%
@@ -217,6 +232,7 @@ th {
 			</td>
 		</tr>
 		<%
+				}
 			}
 		%>
 	</table>
