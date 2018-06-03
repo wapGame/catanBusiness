@@ -6,6 +6,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html lang="en">
@@ -51,9 +53,11 @@ body {
 	opacity: 0.9;
 	background: #6c6f70;
 	background-image: linear-gradient(to bottom, #6c6f70, #424242);
+	border-radius: 28px;
 	text-shadow: 1px 1px 3px #666666;
 	box-shadow: 5px 5px 10px #666666;
 	color: #ffffff;
+	padding: 10px 20px 10px 20px;
 	text-decoration: bold;
 }
 
@@ -64,108 +68,15 @@ body {
 	text-decoration: none;
 }
 
-.table {
-	background: url(media/table_bg.png) top center;
-	background-size: cover;
-	opacity: 0.9;
-	width: 1000px;
-	height: 1000px;
-}
-
-th {
-	border: 2px solid black;
-	width: 200px;
-	height: 200px;
-	position: relative;
-	color: gold;
-	top-margin: 150px;
-	text-align: center;
-}
-
 .blank {
 	background: none;
 	border: none;
-}
-
-.pawn {
-	width: 100px;
-	height: 100px;
-	opacity: 1;
-	display: block;
-	position: absolute;
-	z-index: 1;
-}
-
-#pawnOrange {
-	content: url(media/pawn1.png);
-	margin-left: auto;
-	top: 0px;
-	left: 0px;
-}
-
-#pawnBlue {
-	content: url(media/pawn2.png);
-	margin-right: auto;
-	top: 0px;
 	left: 95px;
-}
-
-#coin {
-	background: url(media/coin.png) left center;
-	background-repeat: no-repeat;
-	text-align: right;
-	font-weight: bold;
-}
-
-.Orange {
-	background-color: rgba(255, 127, 80, 0.7);
-}
-
-.Blue {
-	background-color: rgba(0, 191, 255, 0.7);
-}
-
-.background {
-	top: 0;
-	left: 0;
-	z-index: 0;
-	height: 200px;
-	width: 200px;
-}
-
-.vill {
-	background: url(media/card2.png) top center;
-	background-repeat: no-repeat;
-}
-
-.vill2 {
-	background: url(media/card3.png) top center;
-	background-repeat: no-repeat;
-}
-
-.town {
-	background: url(media/card1.png) top center;
-	background-repeat: no-repeat;
-}
-
-.town2 {
-	background: url(media/card4.png) top center;
-	background-repeat: no-repeat;
-}
-
-.start {
-	background: url(media/start.png) top center;
-	background-repeat: no-repeat;
-}
-
-.direction {
-	background: url(media/direction.png) top center;
-	background-repeat: no-repeat;
 }
 
 #menu {
 	width: 100%;
-	height: 200px;
+	height: 50px;
 }
 
 #submenu {
@@ -173,18 +84,23 @@ th {
 	width: 48%;
 }
 
-.console {
-	background-color: white;
+.table {
+	background: url(media/table_bg.png) top center;
+	background-size: cover;
+	color: white;
 	border: 2px solid black;
-	opacity: 1;
-	width: 400px;
-	height: 200px;
 }
 
-.dice {
-	width: 200px;
-	height: 200px;
-	opacity: 1;
+th {
+	border: 2px solid black;
+}
+
+.sides {
+	width: 20%;
+}
+
+.middle {
+	width: 60%;
 }
 </style>
 
@@ -193,43 +109,61 @@ th {
 
 	<a href="/Game"><div id="banner"></div></a>
 
+	<div id="menu">
+		<div id="submenu">
+			<form action="Logout" method="post">
+				<button type="button">Play</button>
+				<button type="button">How to Play</button>
+				<button type="submit">Log Out</button>
+			</form>
+
+		</div>
+	</div>
+
+	<div id="main">
+		<table class="table">
+			<tr>
+				<th class="sides">Place</th>
+				<th class="middle">Username</th>
+				<th class="sides">Wins</th>
+			</tr>
+
+			<%
+				ArrayList<User> rankList = (ArrayList<User>) request.getAttribute("rankList");
+				if (rankList == null || rankList.isEmpty()) {
+			%><tr>
+				<td>Pusto</td>
+				<td>Pusto</td>
+			</tr>
+			<%
+				} else {
+					for (User user : rankList) {
+						int i = 1;
+			%><tr>
+				<td class="sides"><%=i%></td>
+				<td class="middle"><%=user.getUsername()%></td>
+				<td class="sides"><%=user.getRank()%></td>
+			</tr>
+			<%
+				++i;
+					}
+				}
+			%>
+		</table>
+	</div>
+
+	<div class="footer" align="center">
+		</br> I don't even know.
+	</div>
+
 	<table border=1>
 		<tr>
 			<th>Username</th>
 			<th>Rank</th>
 		</tr>
 
-		<%
-			ArrayList<User> rankList = (ArrayList<User>) request.getAttribute("rankList");
-			if (rankList == null || rankList.isEmpty()) {
-		%><tr>
-			<td>Pusto</td>
-			<td>Pusto</td>
-		</tr>
-		<%
-			} else {
-				for (User user : rankList) {
-		%><tr>
-			<td><%=user.getUsername()%></td>
-			<td><%=user.getRank()%></td>
-		</tr>
-		<%
-			}
-			}
-		%>
+
 	</table>
-
-
-
-
-
-
-
-
-	<div class="footer" align="center">
-		</br> I don't even know.
-	</div>
-
 </body>
 
 </html>
