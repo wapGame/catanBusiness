@@ -89,7 +89,7 @@ body {
 	background-size: cover;
 	color: white;
 	border: 2px solid black;
-	width:1000 px;
+	width:1000px;
 }
 
 th {
