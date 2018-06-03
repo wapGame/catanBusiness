@@ -138,6 +138,8 @@ public class Game extends HttpServlet {
 			Buy(session);
 		} else if (request.getParameter("roll") != null) {
 			Rzut(session);
+		} else if (request.getParameter("howto") != null) {
+			response.sendRedirect("howto.html");
 		}
 
 		doGet(request, response);

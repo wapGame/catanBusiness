@@ -135,7 +135,7 @@ th {
 			</tr>
 			<%
 				} else {
-						int i = 1;
+					int i = 1;
 					for (User user : rankList) {
 			%><tr>
 				<td class="sides"><%=i%></td>
