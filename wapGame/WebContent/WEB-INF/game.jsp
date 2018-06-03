@@ -201,13 +201,8 @@ th {
 
 
 
-	<%!BoardField field = new BoardField();%>
-
-
 	<%
 		Card[] card = (Card[]) session.getAttribute("card");
-		field.checkField(player1, player2, card[position1]);
-		field.checkField(player2, player1, card[position2]);
 	%>
 
 
@@ -278,20 +273,15 @@ th {
 				<th class="blank">
 					<%
 						if (player1.bankrupt) {
-						%>
-						
-						<b>Zbankrutowano - koniec gry. Przegrana !!</b> 
-						
-						<%}
-						else if(player2.bankrupt){	
-						%>
-						
-					    <b>Gracz 2 zbankrutował - koniec gry. Wygrana dla usera <%= player1.getUsername()%> !!</b>
-												
-						<%}						
-					
-						else {							
-					%>
+					%> <b>Zbankrutowano - koniec gry. Przegrana !!</b> <%
+ 	} else if (player2.bankrupt) {
+ %> <b>Gracz 2 zbankrutował - koniec gry. Wygrana dla usera <%=player1.getUsername()%>
+						!!
+				</b> <%
+ 	}
+
+ 	else {
+ %>
 					<form action="Game" method="post">
 						<%
 							if (!(position1 == 1 && position2 == 1)) {
@@ -461,9 +451,9 @@ th {
 			</tr>
 		</table>
 	</div>
-	
-	
-		<div id="menu">
+
+
+	<div id="menu">
 		<div id="submenu">
 			<form action="Logout" method="post">
 				<button class="btn" type="button">How to Play</button>
@@ -475,8 +465,8 @@ th {
 
 		</div>
 	</div>
-	
-	
+
+
 	<a href="/Game"><div id="banner"></div></a>
 
 	<div class="footer" align="center">
