@@ -111,10 +111,8 @@ th {
 
 	<div id="menu">
 		<div id="submenu">
-			<form action="Logout" method="post">
-				<button type="button">Play</button>
-				<button type="button">How to Play</button>
-				<button type="submit">Log Out</button>
+			<form action="Game" method="post">
+				<button type="sumbit">Play</button>
 			</form>
 
 		</div>
@@ -137,8 +135,8 @@ th {
 			</tr>
 			<%
 				} else {
-					for (User user : rankList) {
 						int i = 1;
+					for (User user : rankList) {
 			%><tr>
 				<td class="sides"><%=i%></td>
 				<td class="middle"><%=user.getUsername()%></td>
@@ -155,15 +153,6 @@ th {
 	<div class="footer" align="center">
 		</br> I don't even know.
 	</div>
-
-	<table border=1>
-		<tr>
-			<th>Username</th>
-			<th>Rank</th>
-		</tr>
-
-
-	</table>
 </body>
 
 </html>
