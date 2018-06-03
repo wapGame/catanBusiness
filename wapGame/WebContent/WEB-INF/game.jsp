@@ -1,6 +1,7 @@
 <%@ page import="game.Player"%>
 <%@ page import="game.Card"%>
 <%@ page import="game.Timer"%>
+<%@ page import="game.DatabaseController"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -201,6 +202,7 @@ th {
 		Timer timer = (Timer) session.getAttribute("timer");
 		timer.setAmountOfCurrentSeconds();
 		
+		DatabaseController dbc = new DatabaseController();
 	%>
 		<div> <%=timer.timeElapsed() %> seconds elapsed </div>			
 		
@@ -288,10 +290,12 @@ th {
  %><b>Gracz <%=player1.getUsername()%> wygrywa!! Gracz 2 zbankrutował.</b> <%
  	} else if (timer.checkIfElapsed(20)) {
  		if(player1.GetMoney() > player2.GetMoney()) { 
- 		player2.setBankrupt();%>
+ 			dbc.setRankingList(player1.getUsername(), true);
+ 		%>
  			<b>Gracz <%=player1.getUsername()%> wygrywa!!</b>
  		<%} else if (player2.GetMoney() > player1.GetMoney()) { 
- 		player1.setBankrupt();%>
+ 			dbc.setRankingList(player1.getUsername(), false);
+ 			%>
  			<b>Gracz <%=player2.getUsername()%> wygrywa!!</b>
  		<%} else { %>
  			<b>Remis!!</b>
