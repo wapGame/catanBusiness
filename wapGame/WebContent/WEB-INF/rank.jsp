@@ -90,6 +90,7 @@ body {
 	color: white;
 	border: 2px solid black;
 	width:1000px;
+	background-repeat: repeat-y;
 }
 
 th {
