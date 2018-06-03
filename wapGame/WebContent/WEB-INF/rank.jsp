@@ -1,5 +1,4 @@
 <%@ page import="game.Player"%>
-<%@ page import="game.BoardField"%>
 <%@ page import="game.Card"%>
 <%@ page import="game.User"%>
 <%@ page import="java.util.ArrayList"%>
