@@ -51,17 +51,4 @@ public class Timer {
 		}
 		return secondsPassed;
 	}
-	
-	public long WaitForMinutes(long timeInMinutes, int numOfIterations) {
-		long minutesPassed = 0;
-		for(int i = 1; i <= numOfIterations; i++) {
-		try {
-			TimeUnit.MINUTES.sleep(timeInMinutes);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		minutesPassed = (i * timeInMinutes);
-		}
-		return minutesPassed;
-	}
 }
