@@ -94,7 +94,7 @@ public class Game extends HttpServlet {
 					System.out.println("Added to rank");
 					player1.saved = true;
 				}
-				if (player1.saved == false) {
+				if (player2.saved == false) {
 					dbc.setRankingList(player2.getUsername(), true);
 					System.out.println("Added to rank");
 					player2.saved = true;
