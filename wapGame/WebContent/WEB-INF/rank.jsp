@@ -53,11 +53,9 @@ body {
 	opacity: 0.9;
 	background: #6c6f70;
 	background-image: linear-gradient(to bottom, #6c6f70, #424242);
-	border-radius: 28px;
 	text-shadow: 1px 1px 3px #666666;
 	box-shadow: 5px 5px 10px #666666;
 	color: #ffffff;
-	padding: 10px 20px 10px 20px;
 	text-decoration: bold;
 }
 
@@ -114,7 +112,7 @@ th {
 	<div id="menu">
 		<div id="submenu">
 			<form action="Game" method="post">
-				<button type="sumbit">Play</button>
+				<button type="sumbit" class="btn">Play</button>
 			</form>
 
 		</div>
