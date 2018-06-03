@@ -201,11 +201,10 @@ th {
 		Timer timer = (Timer) session.getAttribute("timer");
 		timer.setAmountOfCurrentSeconds();
 		
-		if(timer.checkIfElapsed(10)) {
 	%>
-		<div> <%=timer.timeElapsed() %> elapsed </div>			
-		 
-		 <% }%>
+		<div> <%=timer.timeElapsed() %> seconds elapsed </div>			
+		
+
 
 
 
@@ -279,14 +278,25 @@ th {
  %></th>
 				<th class="blank"></th>
 				<th class="blank">
+						<%if(timer.checkIfElapsed(10)) {  %>
+		 
+		 <% }%>
 					<%
 						if (player1.bankrupt) {
 					%> <b>Gracz <%=player1.getUsername()%> zbankrutował. Przegrana!!</b> <%
  	} else if (player2.bankrupt) {
  %><b>Gracz <%=player1.getUsername()%> wygrywa!! Gracz 2 zbankrutował.</b> <%
- 	}
+ 	} else if (timer.checkIfElapsed(20)) {
+ 		if(player1.GetMoney() > player2.GetMoney()) { %>
+ 			<b>Gracz <%=player1.getUsername()%> wygrywa!!</b>
+ 		<%} else if (player2.GetMoney() > player1.GetMoney()) { %>
+ 			<b>Gracz <%=player2.getUsername()%> wygrywa!!</b>
+ 		<%} else { %>
+ 			<b>Remis!!</b>
+ 		<% }
+ 	 }
 
- 	else {
+ 	 else {
  %>
 					<form action="Game" method="post">
 						<%
