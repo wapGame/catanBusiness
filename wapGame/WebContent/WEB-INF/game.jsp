@@ -1,5 +1,4 @@
 <%@ page import="game.Player"%>
-<%@ page import="game.BoardField"%>
 <%@ page import="game.Card"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -273,11 +272,9 @@ th {
 				<th class="blank">
 					<%
 						if (player1.bankrupt) {
-					%> <b>Zbankrutowano - koniec gry. Przegrana !!</b> <%
+					%> <b>Gracz <%=player1.getUsername()%> zbankrutował. Przegrana!!</b> <%
  	} else if (player2.bankrupt) {
- %> <b>Gracz 2 zbankrutował - koniec gry. Wygrana dla usera <%=player1.getUsername()%>
-						!!
-				</b> <%
+ %><b>Gracz <%=player1.getUsername()%> wygrywa!! Gracz 2 zbankrutował.</b> <%
  	}
 
  	else {
