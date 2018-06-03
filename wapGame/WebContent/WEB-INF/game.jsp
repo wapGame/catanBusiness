@@ -287,9 +287,11 @@ th {
  	} else if (player2.bankrupt) {
  %><b>Gracz <%=player1.getUsername()%> wygrywa!! Gracz 2 zbankrutował.</b> <%
  	} else if (timer.checkIfElapsed(20)) {
- 		if(player1.GetMoney() > player2.GetMoney()) { %>
+ 		if(player1.GetMoney() > player2.GetMoney()) { 
+ 		player2.setBankrupt();%>
  			<b>Gracz <%=player1.getUsername()%> wygrywa!!</b>
- 		<%} else if (player2.GetMoney() > player1.GetMoney()) { %>
+ 		<%} else if (player2.GetMoney() > player1.GetMoney()) { 
+ 		player1.setBankrupt();%>
  			<b>Gracz <%=player2.getUsername()%> wygrywa!!</b>
  		<%} else { %>
  			<b>Remis!!</b>
