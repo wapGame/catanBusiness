@@ -30,6 +30,10 @@ public class Login extends HttpServlet {
 		if (username.equals("cb") || (dbc.checkUser(username, password) && username != "")) {
 
 			HttpSession session = request.getSession();
+			
+			Timer timer = new Timer();
+			timer.setAmountOfStartSeconds();
+			session.setAttribute("timer", timer);
 
 			Player player1 = new Player(1, 250);
 			player1.setUsername(username);
@@ -62,8 +66,8 @@ public class Login extends HttpServlet {
 			session.setAttribute("card", card);
 			session.setAttribute("login", "true");
 
-			Timer timer = new Timer();
-			timer.setAmountOfStartSeconds();
+
+			
 			
 			System.out.println("checkUser == true");
 			response.sendRedirect("Game");

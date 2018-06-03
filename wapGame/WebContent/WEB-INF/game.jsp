@@ -198,7 +198,7 @@ th {
 		Player player2 = (Player) session.getAttribute("player2");
 		int position2 = player2.GetPlace();
 		
-		Timer timer = new Timer();
+		Timer timer = (Timer) session.getAttribute("timer");
 		timer.setAmountOfCurrentSeconds();
 		
 		if(timer.checkIfElapsed(10)) {
