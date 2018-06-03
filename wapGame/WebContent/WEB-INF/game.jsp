@@ -198,25 +198,19 @@ th {
 
 		Player player2 = (Player) session.getAttribute("player2");
 		int position2 = player2.GetPlace();
-		
+
 		Timer timer = (Timer) session.getAttribute("timer");
 		timer.setAmountOfCurrentSeconds();
-		
+
 		DatabaseController dbc = new DatabaseController();
 	%>
-		<div> <%=timer.timeElapsed() %> seconds elapsed </div>			
-		
-
-
-
+	<div> Time left: 
+		<%= (300 - timer.timeElapsed())%>
+	</div>
 
 	<%
 		Card[] card = (Card[]) session.getAttribute("card");
 	%>
-
-
-
-
 
 	<div id="main">
 		<table class="table">
@@ -280,29 +274,34 @@ th {
  %></th>
 				<th class="blank"></th>
 				<th class="blank">
-						<%if(timer.checkIfElapsed(10)) {  %>
-		 
-		 <% }%>
 					<%
-						if (player1.bankrupt) {
-					%> <b>Gracz <%=player1.getUsername()%> zbankrutował. Przegrana!!</b> <%
+						if (timer.checkIfElapsed(10)) {
+					%> <%
+ 	}
+ %> <%
+ 	if (player1.bankrupt) {
+ %> <b>Gracz <%=player1.getUsername()%> zbankrutował.
+						Przegrana!!
+				</b> <%
  	} else if (player2.bankrupt) {
- %><b>Gracz <%=player1.getUsername()%> wygrywa!! Gracz 2 zbankrutował.</b> <%
- 	} else if (timer.checkIfElapsed(20)) {
- 		if(player1.GetMoney() > player2.GetMoney()) { 
+ %><b>Gracz <%=player1.getUsername()%> wygrywa!! Gracz 2
+						zbankrutował.
+				</b> <%
+ 	} else if (timer.checkIfElapsed(300)) {
+ 		if (player1.GetMoney() > player2.GetMoney()) {
  			dbc.setRankingList(player1.getUsername(), true);
- 		%>
- 			<b>Gracz <%=player1.getUsername()%> wygrywa!!</b>
- 		<%} else if (player2.GetMoney() > player1.GetMoney()) { 
+ %> <b>Gracz <%=player1.getUsername()%> wygrywa!!
+				</b> <%
+ 	} else if (player2.GetMoney() > player1.GetMoney()) {
  			dbc.setRankingList(player1.getUsername(), false);
- 			%>
- 			<b>Gracz <%=player2.getUsername()%> wygrywa!!</b>
- 		<%} else { %>
- 			<b>Remis!!</b>
- 		<% }
- 	 }
+ %> <b>Gracz <%=player2.getUsername()%> wygrywa!!
+				</b> <%
+ 	} else {
+ %> <b>Remis!!</b> <%
+ 	}
+ 	}
 
- 	 else {
+ 	else {
  %>
 					<form action="Game" method="post">
 						<%
@@ -482,7 +481,7 @@ th {
 				<button class="btn" type="submit" name="howto">How to Play</button>
 			</form>
 			<form action="Logout" method="post">
-				<button class="btn" type="submit" >Log Out</button>
+				<button class="btn" type="submit">Log Out</button>
 			</form>
 			<form action="Rank" method="post">
 				<button class="btn" type="submit">See Rankings</button>
