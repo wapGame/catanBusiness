@@ -152,7 +152,7 @@ th {
 	</div>
 
 	<div class="footer" align="center">
-		</br> I don't even know.
+		</br>WAP Project, UEP 2018
 	</div>
 </body>
 
