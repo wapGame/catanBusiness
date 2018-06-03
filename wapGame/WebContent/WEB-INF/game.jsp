@@ -294,7 +294,8 @@ th {
 						%>
 						<button type="submit" class="btn" name="roll">Roll</button>
 						<%
-							} else if (!card[position1].isBuyed() && player1.GetMoney() >= card[position1].getCost()) {
+							} else if (position1 != 1 && !card[position1].isBuyed()
+											&& player1.GetMoney() >= card[position1].getCost()) {
 						%>
 						<button type="submit" class="btn" name="buy">Buy</button>
 						<%
