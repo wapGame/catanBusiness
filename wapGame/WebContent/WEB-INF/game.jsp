@@ -204,8 +204,13 @@ th {
 
 		DatabaseController dbc = new DatabaseController();
 	%>
-	<div> Time left: 
-		<%= (300 - timer.timeElapsed())%>
+	<div> Time left:
+	<% if((300 - timer.timeElapsed() <= 0)) { %>
+		0 seconds
+	<% } else {%>
+		<%= (300 - timer.timeElapsed())%> seconds
+		 <%} %>
+		
 	</div>
 
 	<%
@@ -289,11 +294,17 @@ th {
 				</b> <%
  	} else if (timer.checkIfElapsed(300)) {
  		if (player1.GetMoney() > player2.GetMoney()) {
+ 			if (player1.saved == false) {
  			dbc.setRankingList(player1.getUsername(), true);
+ 			player1.saved = true;
+ 			}
  %> <b>Gracz <%=player1.getUsername()%> wygrywa!!
 				</b> <%
  	} else if (player2.GetMoney() > player1.GetMoney()) {
+ 		if (player1.saved == false) {
  			dbc.setRankingList(player1.getUsername(), false);
+ 			player1.saved = true;
+ 		}
  %> <b>Gracz <%=player2.getUsername()%> wygrywa!!
 				</b> <%
  	} else {
