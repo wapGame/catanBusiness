@@ -32,10 +32,12 @@ public class BoardField {
 				player1.setBankrupt();
 				if (player1.saved == false) {
 					dbc.setRankingList(player1.getUsername(), false);
+					System.out.println("Added to rank");
 					player1.saved = true;
 				}
 				if (player1.saved == false) {
 					dbc.setRankingList(player2.getUsername(), true);
+					System.out.println("Added to rank");
 					player2.saved = true;
 				}
 				return true;
