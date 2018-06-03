@@ -153,4 +153,107 @@ public class DatabaseController {
 		return rankList;
 	}
 
+	public boolean checkUser(String username, String password) {
+		
+		boolean exist = false;
+		Connection connection;
+		PreparedStatement statement;
+
+		String dbURL = DBInfo.getDBURL();
+		String dbuser = DBInfo.getUser();
+		String dbpassword = DBInfo.getPassword();
+
+		try {
+			Class.forName(DBInfo.getDriver());
+		} catch (ClassNotFoundException e) {
+			System.out.println("Error. Driver class not found: " + e);
+		}
+
+		try {
+			connection = DriverManager.getConnection(dbURL, dbuser, dbpassword);
+		} catch (SQLException e) {
+			System.out.println("Error. Connection problem: " + e);
+			return false;
+		}
+
+		try {
+			statement = connection.prepareStatement("SELECT * FROM users WHERE username=? AND password=?");
+
+			statement.setString(1, username);
+			statement.setString(2, password);
+
+			ResultSet rs = statement.executeQuery();
+			exist = rs.next();
+
+		} catch (SQLException e) {
+			System.out.println("Error. Can not create the statement: " + e);
+			return false;
+		}
+
+		try {
+			statement.executeUpdate();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+
+		try {
+			connection.close();
+		} catch (SQLException e) {
+			System.out.println("Error. Problem with closing connection: " + e);
+			return false;
+		}
+		return exist;
+	}
+	
+	public void addUser(String username, String password) {
+
+		Connection connection;
+		PreparedStatement statement;
+		
+		String dbURL = DBInfo.getDBURL();
+		String dbuser = DBInfo.getUser();
+		String dbpassword = DBInfo.getPassword();
+
+		try {
+
+			Class.forName(DBInfo.getDriver());
+		} catch (ClassNotFoundException e) {
+			System.out.println("Error. Driver class not found: " + e);
+		}
+		
+		try {
+			connection = DriverManager.getConnection(dbURL, dbuser, dbpassword);
+		} catch (SQLException e) {
+			System.out.println("Error. Connection problem: " + e);
+			return;
+		}
+		
+		
+		try {
+			statement = connection.prepareStatement("INSERT INTO users (id, username, password) VALUES (0,?,?)");
+			
+			statement.setString(1, username);
+			statement.setString(2, password);
+		} catch (SQLException e) {
+			System.out.println("Error. Can not create the statement: " + e);
+			return;
+		}
+		
+		
+		
+		try {
+					
+			statement.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("Error. Problem with executeUpdate: " + e);
+			return;
+		}
+		
+		try {
+			connection.close();
+		} catch (SQLException e) {
+			System.out.println("Error. Problem with closing connection: " + e);
+			return;
+		}
+	}
 }

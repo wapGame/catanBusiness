@@ -2,7 +2,6 @@ package game;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,19 +16,14 @@ public class Logout extends HttpServlet {
 	
 	public Logout() {
 		super();
-	}
-	
-
+	}	
 	
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		session.setAttribute("login", "false");
 		session.invalidate();
-			System.out.println("Go to index");
-			//RequestDispatcher disp = request.getRequestDispatcher("index.html");
-			//disp.forward(request, response);			
-			response.sendRedirect("index.html");
+		response.sendRedirect("index.html");
 			
 	}
 
