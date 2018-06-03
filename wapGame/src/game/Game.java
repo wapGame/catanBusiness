@@ -39,17 +39,16 @@ public class Game extends HttpServlet {
 		Player player2 = (Player) session.getAttribute("player2");
 		player2.WhatSpot(player2.RollDice());
 		int position2 = player2.GetPlace();
-		
 
-		if (!card[position2].isBuyed && player2.checkMoneyStatus(card[position2].getCost())) {			
+		if (!card[position2].isBuyed && player2.checkMoneyStatus(card[position2].getCost())) {
 			player2.substractMoney(card[position2].getCost());
 			player2.addToList(card[position2]);
 			card[position2].setToBuyed(2);
 			System.out.println("Player2 - buy " + card[position2].getName());
 		}
-		
+
 		checkField(player2, player1, card[position2]);
-		
+
 		player1.rolled = false;
 		session.setAttribute("card", card);
 		session.setAttribute("player1", player1);
@@ -72,7 +71,7 @@ public class Game extends HttpServlet {
 		session.setAttribute("player1", player1);
 
 	}
-	
+
 	public void checkField(Player player1, Player player2, Card card) {
 		int payment = (card.getCost() / 4);
 
@@ -107,8 +106,7 @@ public class Game extends HttpServlet {
 		System.out.println();
 		return;
 	}
-	
-		
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -116,7 +114,7 @@ public class Game extends HttpServlet {
 		String login = (String) session.getAttribute("login");
 
 		if (login == "true") {
-			
+
 			System.out.println("login == true");
 			RequestDispatcher disp = request.getRequestDispatcher("/WEB-INF/game.jsp");
 			disp.forward(request, response);
@@ -141,8 +139,14 @@ public class Game extends HttpServlet {
 			Rzut(session);
 		} else if (request.getParameter("howto") != null) {
 			response.sendRedirect("howto.html");
+			return;
+		} else if (request.getParameter("logout") != null) {
+			response.sendRedirect("Logout");
+			return;
+		} else if (request.getParameter("rank") != null) {
+			response.sendRedirect("Rank");
+			return;
 		}
-
 		doGet(request, response);
 	}
 

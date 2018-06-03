@@ -190,6 +190,8 @@ th {
 
 </head>
 <body>
+	<a href="Game"><div id="banner"></div></a>
+
 
 	<%
 		Player player1 = (Player) session.getAttribute("player1");
@@ -203,19 +205,25 @@ th {
 		timer.setAmountOfCurrentSeconds();
 
 		DatabaseController dbc = new DatabaseController();
-	%>
-	<div> Time left:
-	<% if((300 - timer.timeElapsed() <= 0)) { %>
-		0 seconds
-	<% } else {%>
-		<%= (300 - timer.timeElapsed())%> seconds
-		 <%} %>
-		
-	</div>
-
-	<%
 		Card[] card = (Card[]) session.getAttribute("card");
 	%>
+
+	<div>
+		Time left:
+		<%
+		if ((300 - timer.timeElapsed() <= 0)) {
+	%>
+		0 seconds
+		<%
+		} else {
+	%>
+		<%=(300 - timer.timeElapsed())%>
+		seconds
+		<%
+			}
+		%>
+
+	</div>
 
 	<div id="main">
 		<table class="table">
@@ -285,8 +293,7 @@ th {
  	}
  %> <%
  	if (player1.bankrupt) {
- %> <b>Gracz <%=player1.getUsername()%> zbankrutował.
-						Przegrana!!
+ %> <b>Gracz <%=player1.getUsername()%> zbankrutował. Przegrana!!
 				</b> <%
  	} else if (player2.bankrupt) {
  %><b>Gracz <%=player1.getUsername()%> wygrywa!! Gracz 2
@@ -295,16 +302,16 @@ th {
  	} else if (timer.checkIfElapsed(300)) {
  		if (player1.GetMoney() > player2.GetMoney()) {
  			if (player1.saved == false) {
- 			dbc.setRankingList(player1.getUsername(), true);
- 			player1.saved = true;
+ 				dbc.setRankingList(player1.getUsername(), true);
+ 				player1.saved = true;
  			}
  %> <b>Gracz <%=player1.getUsername()%> wygrywa!!
 				</b> <%
  	} else if (player2.GetMoney() > player1.GetMoney()) {
- 		if (player1.saved == false) {
- 			dbc.setRankingList(player1.getUsername(), false);
- 			player1.saved = true;
- 		}
+ 			if (player1.saved == false) {
+ 				dbc.setRankingList(player1.getUsername(), false);
+ 				player1.saved = true;
+ 			}
  %> <b>Gracz <%=player2.getUsername()%> wygrywa!!
 				</b> <%
  	} else {
@@ -484,25 +491,20 @@ th {
 			</tr>
 		</table>
 	</div>
-
-
+	
 	<div id="menu">
 		<div id="submenu">
 			<form action="Game" method="post">
 				<button class="btn" type="submit" name="howto">How to Play</button>
-			</form>
-			<form action="Logout" method="post">
-				<button class="btn" type="submit">Log Out</button>
-			</form>
-			<form action="Rank" method="post">
-				<button class="btn" type="submit">See Rankings</button>
+
+				<button class="btn" type="submit" name="logout">Log Out</button>
+
+				<button class="btn" type="submit" name="rank">See Rankings</button>
 			</form>
 
 		</div>
 	</div>
 
-
-	<a href="/Game"><div id="banner"></div></a>
 
 	<div class="footer" align="center">
 		</br> WAP Project, UEP 2018

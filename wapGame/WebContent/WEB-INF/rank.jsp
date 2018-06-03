@@ -107,7 +107,7 @@ th {
 </head>
 <body>
 
-	<a href="/Game"><div id="banner"></div></a>
+	<a href="Game"><div id="banner"></div></a>
 
 	<div id="menu">
 		<div id="submenu">
