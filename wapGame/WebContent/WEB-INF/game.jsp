@@ -454,7 +454,7 @@ th {
 	<div id="menu">
 		<div id="submenu">
 			<form action="Game" method="post">
-				<button class="btn" type="button" name="roll">How to Play</button>
+				<button class="btn" type="submit" name="howto">How to Play</button>
 			</form>
 			<form action="Logout" method="post">
 				<button class="btn" type="submit" >Log Out</button>
