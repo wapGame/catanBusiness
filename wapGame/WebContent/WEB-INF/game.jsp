@@ -1,5 +1,6 @@
 <%@ page import="game.Player"%>
 <%@ page import="game.Card"%>
+<%@ page import="game.Timer"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -196,7 +197,15 @@ th {
 
 		Player player2 = (Player) session.getAttribute("player2");
 		int position2 = player2.GetPlace();
+		
+		Timer timer = new Timer();
+		timer.setAmountOfCurrentSeconds();
+		
+		if(timer.checkIfElapsed(10)) {
 	%>
+		<div> <%=timer.timeElapsed() %> elapsed </div>			
+		 
+		 <% }%>
 
 
 

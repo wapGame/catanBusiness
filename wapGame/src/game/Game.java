@@ -1,6 +1,7 @@
 package game;
 
 import java.io.IOException;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -115,7 +116,7 @@ public class Game extends HttpServlet {
 		String login = (String) session.getAttribute("login");
 
 		if (login == "true") {
-
+			
 			System.out.println("login == true");
 			RequestDispatcher disp = request.getRequestDispatcher("/WEB-INF/game.jsp");
 			disp.forward(request, response);
