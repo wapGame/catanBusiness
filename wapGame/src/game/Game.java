@@ -42,7 +42,7 @@ public class Game extends HttpServlet {
 		player2.WhatSpot(player2.RollDice());
 		int position2 = player2.GetPlace();
 
-		if (!card[position2].isBuyed && player2.checkMoneyStatus(card[position2].getCost())) {
+		if (position2 != 1 && !card[position2].isBuyed && player2.checkMoneyStatus(card[position2].getCost())) {
 			player2.substractMoney(card[position2].getCost());
 			player2.addToList(card[position2]);
 			card[position2].setToBuyed(2);
@@ -132,7 +132,7 @@ public class Game extends HttpServlet {
 			}
 		}
 
-		if (priceCard1 > 0.85 * priceCard2) {
+		if (priceCard1 > 0.8 * priceCard2) {
 
 			List<Card> cardList1 = player1.getCardList();
 			List<Card> cardList2 = player2.getCardList();
