@@ -1,7 +1,9 @@
 package game;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -107,6 +109,58 @@ public class Game extends HttpServlet {
 		return;
 	}
 
+	public void exchangeCard(HttpServletRequest request) {
+
+		HttpSession session = request.getSession();
+		String exc1 = request.getParameter("exc1");
+		String exc2 = request.getParameter("exc2");
+		Player player1 = (Player) session.getAttribute("player1");
+		Player player2 = (Player) session.getAttribute("player2");
+		Card[] card = (Card[]) session.getAttribute("card");
+		player1.wantExchange = false;
+		int priceCard1 = 0;
+		int priceCard2 = 0;
+		int temp1 = 0;
+		int temp2 = 0;
+		for (int i = 0; i < 17; i++) {
+			if (card[i].getName().equals(exc1)) {
+				priceCard1 = card[i].getCost();
+				temp1 = i;
+			} else if (card[i].getName().equals(exc2)) {
+				priceCard2 = card[i].getCost();
+				temp2 = i;
+			}
+		}
+
+		if (priceCard1 > 0.85 * priceCard2) {
+
+			List<Card> cardList1 = player1.getCardList();
+			List<Card> cardList2 = player2.getCardList();
+
+			card[temp1].setToBuyed(2);
+			card[temp2].setToBuyed(1);
+
+			for (Card c : cardList1) {
+				if (c.getName().equals(exc1)) {
+					player1.removeCard(c);
+					player2.addToList(c);
+					break;
+				}
+			}
+			for (Card c : cardList2) {
+				if (c.getName().equals(exc2)) {
+					player2.removeCard(c);
+					player1.addToList(c);
+					break;
+				}
+			}
+
+		}
+		session.setAttribute("card", card);
+		session.setAttribute("player1", player1);
+		session.setAttribute("player2", player2);
+	}
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -146,7 +200,17 @@ public class Game extends HttpServlet {
 		} else if (request.getParameter("rank") != null) {
 			response.sendRedirect("Rank");
 			return;
-		}
+		} else if (request.getParameter("wantex") != null) {
+			Player player1 = (Player) session.getAttribute("player1");
+			Player player2 = (Player) session.getAttribute("player2");
+			if (!player1.getCardList().equals(new ArrayList<>()) && !player2.getCardList().equals(new ArrayList<>())) {
+				player1.wantExchange = true;
+			}
+			session.setAttribute("player1", player1);
+		} else if (request.getParameter("exc1") != null) {
+			exchangeCard(request);
+		} 
+
 		doGet(request, response);
 	}
 

@@ -2,6 +2,7 @@
 <%@ page import="game.Card"%>
 <%@ page import="game.Timer"%>
 <%@ page import="game.DatabaseController"%>
+<%@ page import="java.util.List"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -320,26 +321,53 @@ th {
  	}
 
  	else {
+ 		if (player1.wantExchange == true) {
+
+ 			List<Card> cardList1 = player1.getCardList();
+ 			List<Card> cardList2 = player2.getCardList();
+ %> <br />
+					<form action="Game" method="post">
+						<select name="exc1">
+							<%
+								for (Card c : cardList1) {
+							%>
+							<option value=<%=c.getName()%>><%=c.getName()%></option>
+							<%
+								}
+							%>
+						</select> <br /> on <br /> <select name="exc2">
+							<%
+								for (Card c : cardList2) {
+							%>
+							<option value=<%=c.getName()%>><%=c.getName()%></option>
+							<%
+								}
+							%>
+						</select> <br /> <br />
+						<button type="submit" class="btn" >TRY</button>
+					</form> <%
+ 	} else {
  %>
 					<form action="Game" method="post">
 						<%
 							if (!(position1 == 1 && position2 == 1)) {
-									if (player1.rolled == true) {
+										if (player1.rolled == true) {
 						%>
 						<button type="submit" class="btn" name="endturn">End Turn</button>
 						<%
 							}
-									if (player1.rolled == false) {
+										if (player1.rolled == false) {
 						%>
 						<button type="submit" class="btn" name="roll">Roll</button>
+						<button type="submit" class="btn" name="wantex">Exchange</button>
 						<%
 							} else if (position1 != 1 && !card[position1].isBuyed()
-											&& player1.GetMoney() >= card[position1].getCost()) {
+												&& player1.GetMoney() >= card[position1].getCost()) {
 						%>
 						<button type="submit" class="btn" name="buy">Buy</button>
 						<%
 							}
-								} else {
+									} else {
 						%>
 						<button type="submit" class="btn" name="roll">ROLL</button>
 						<%
@@ -347,6 +375,7 @@ th {
 						%>
 
 					</form> <%
+ 	}
  	}
  %>
 				</th>
@@ -491,7 +520,7 @@ th {
 			</tr>
 		</table>
 	</div>
-	
+
 	<div id="menu">
 		<div id="submenu">
 			<form action="Game" method="post">

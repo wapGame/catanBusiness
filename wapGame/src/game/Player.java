@@ -19,7 +19,7 @@ public class Player {
 	public boolean rolled = false;
 	public boolean bankrupt = false;
 	public boolean saved = false;
-	
+	public boolean wantExchange = false;
 	public Player(int _playerID, int _money) {
 		this.playerID = _playerID;
 		this.money = _money;
@@ -36,7 +36,14 @@ public class Player {
 	public void addToList(Card card) {
 		cardList.add(card);
 	}
+	
+	public void removeCard(Card card) {
+		cardList.remove(card);
+	}
 
+	public List<Card> getCardList(){
+		return cardList;
+	}
 	public boolean checkCard(String name) {
 		for (Card card : cardList) {
 			if (card.getName().equals(name)) {
