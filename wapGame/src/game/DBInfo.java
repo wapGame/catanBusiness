@@ -2,11 +2,10 @@ package game;
 
 public class DBInfo {
 	
-	static String host = "jws-app-mysql"; // The standard name in Tomcat+ MySQL on openshift
-	//static String host = "localhost";
+	static String host = "jws-app-mysql"; 
 	
 	static String DBname = "lllc";
-	static int port = 3306; // This is for MySQL
+	static int port = 3306;
 	static String mySQLdbURL = "jdbc:mysql://" + host + ":" + port + "/"
 			+ DBname;
 
@@ -16,7 +15,7 @@ public class DBInfo {
 	static String driver = "com.mysql.jdbc.Driver";
 
 	public DBInfo() {
-		// TODO Auto-generated constructor stub
+
 	}
 
 	static String getDBURL() {
